@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <meta name='title' content='Gpware - Info'>
+	    <meta name='description' content=''>
+	    <meta name='url' content=''>
+	    <meta name='keywords' content=''>
+		
+		<meta property='og:title' content='Gpware - Info' />
+		<meta property='og:type' content='Website' />
+		<meta property='og:url' content='' />
+		<meta property='og:description' content='' />
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+		<link href="assets/fonts/hind-madurai.css" rel="stylesheet">
+		<link href="assets/fonts/allerta-stencil.css" rel="stylesheet">
+		
+		<link rel="icon" href="assets/img/gpware-logo-1.png" sizes="16x16" type="image/png">
+		
+		<link rel="Stylesheet" href="assets/css/bootstrap.v4.1.3.css" />
+		<link rel="stylesheet" href="assets/css/styles.css" />
+	    <link rel="stylesheet" href="assets/css/daterangepicker.css" />
+	    
+	    <link rel="icon" href="assets/img/gpware-logo-1.png" sizes="16x16" type="image/png">
+	    
+	    <script src="assets/js/jquery-3.3.1.min.js"></script>
+	    <script src="assets/js/bootstrap.v4.1.3.js"></script>
+	    <script src="assets/js/chart.js"></script>
+	    <script src="assets/js/chart.bundle.js"></script>
+	    <script src="assets/js/date.moment.js"></script>
+		<title>Gpware - Billing</title>
+	</head>
+	<body>
+		<div class="loader-container" id="pageLoadingContainer">
+            <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+		<section class="sec-banner">
+			<div class="banner_text">
+				<a href="index.html"><h1 class="head-title-2">GPWARE</h1></a>
+			</div>
+		</section>
+		<section class="sec-menu">
+			<div class="container">
+				<ul class="nav nav-tabs">
+					<li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="/billing.html">Billing</a></li>
+					<li class="nav-item"><a class="nav-link" href="/products.html">Products</a></li>
+					<li class="nav-item"><a class="nav-link" href="/customers.html">Customers</a></li>
+					<li class="nav-item"><a class="nav-link active" href="/reports.html">Reports</a></li>
+				</ul>
+			</div>
+		</section>
+		<section class="sec-body">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<h1>Billing Info</h1>
+						<hr>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-8">
+						<div class="card bg-light mb-3">
+							<div class="card-header bg-info text-white ">Trending (Recent 10 days)</div>
+							<div class="card-body">
+								<canvas id="line-chart" width="400" height="200"></canvas>	
+							</div>
+						</div>
+					</div>
+					<div class="col-4">
+						<div class="card-deck">
+							<div class="card bg-light mb-3">
+								<div class="card-header bg-info text-white ">Revenue (Rs.)</div>
+								<div class="card-body">
+									<h5 class="card-title"><span id="revenue"></span></h5>
+								</div>
+							</div>
+							<div class="card bg-light mb-3">
+								<div class="card-header bg-info text-white ">Customer(s)</div>
+								<div class="card-body">
+									<h5 class="card-title"><span id="custCount"></span></h5>
+								</div>
+							</div>
+						</div>
+						<div class="card-deck">
+							<div class="card bg-light mb-3" >
+								<div class="card-header bg-info text-white ">Invoice</div>
+								<div class="card-body">
+									<h5 class="card-title"><span id="invoiceCount"></span></h5>
+								</div>
+							</div>
+							<div class="card bg-light mb-3" >
+								<div class="card-header bg-info text-white ">Product(s)</div>
+								<div class="card-body">
+									<h5 class="card-title"><span id="productCount"></span></h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-12">
+						<div class="card bg-light mb-3">
+							<div class="card-header bg-info text-white ">Invoice Info (Recent 10 days)</div>
+							<div class="card-body table-responsive">
+								<table class="table table-bordered">
+									<thead>
+										<tr class="table-active">
+											<th scope="col">Bill #</th>
+											<th scope="col">Customer Name</th>
+											<th scope="col">No.of.Items</th>
+											<th scope="col">Total</th>
+											<th scope="col">GST</th>
+											<th scope="col">Grand Total</th>
+											<th scope="col">Generated On</th>
+										</tr>
+									</thead>
+									<tbody id="billingRecords"></tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</section>
+		<section class="sec-footor">
+			<div class="container">
+                <div class="footor-content">
+                    &copy; Copyright 2018
+				</div> 
+            </div>
+		</section>
+	</body>
+	<script src="assets/js/reports.js"></script>	
+</html>

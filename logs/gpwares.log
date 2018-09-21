@@ -1,0 +1,860 @@
+2018-09-21 10:14:55.240 ERROR 3024 --- [restartedMain] o.s.b.c.l.LoggingApplicationListener     : Cannot set level: TRACE  for 'org.hibernate.type.descriptor.sql.BasicBinder'
+2018-09-21 10:14:55.516  INFO 3024 --- [restartedMain] c.g.b.SpringBootWebServicesApplication   : Starting SpringBootWebServicesApplication on CDC2-L-33BW4H2 with PID 3024 (started by prabu.devarajan in C:\Prabu Devarajan\OneDrive - Accenture\1. Fun\eclipse-oxygen-workspace\billing)
+2018-09-21 10:14:55.517  INFO 3024 --- [restartedMain] c.g.b.SpringBootWebServicesApplication   : No active profile set, falling back to default profiles: default
+2018-09-21 10:14:55.693  INFO 3024 --- [restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@45a16b93: startup date [Fri Sep 21 10:14:55 IST 2018]; root of context hierarchy
+2018-09-21 10:14:58.721  INFO 3024 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5768c96f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-21 10:15:00.270  INFO 3024 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9097 (http)
+2018-09-21 10:15:00.328  INFO 3024 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-09-21 10:15:00.329  INFO 3024 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-09-21 10:15:00.354  INFO 3024 --- [localhost-startStop-1] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_161\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files\Microsoft\Web Platform Installer\;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Users\prabu.devarajan\.dnx\bin;C:\Users\prabu.devarajan\AppData\Local\Microsoft\WindowsApps;C:\Users\prabu.devarajan\AppData\Local\Programs\Fiddler;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps;.]
+2018-09-21 10:15:01.003  INFO 3024 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018-09-21 10:15:01.024  INFO 3024 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-09-21 10:15:01.025  INFO 3024 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 5331 ms
+2018-09-21 10:15:01.267  INFO 3024 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-09-21 10:15:01.267  INFO 3024 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-09-21 10:15:01.267  INFO 3024 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-09-21 10:15:01.267  INFO 3024 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-09-21 10:15:01.267  INFO 3024 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-09-21 10:15:01.719  INFO 3024 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2018-09-21 10:15:02.145  INFO 3024 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2018-09-21 10:15:02.272  INFO 3024 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-09-21 10:15:02.366  INFO 3024 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-09-21 10:15:02.589  INFO 3024 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate Core {5.2.17.Final}
+2018-09-21 10:15:02.592  INFO 3024 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
+2018-09-21 10:15:02.743  INFO 3024 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-09-21 10:15:03.178  INFO 3024 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-09-21 10:15:04.313  INFO 3024 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-09-21 10:15:04.708  INFO 3024 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-21 10:15:05.089  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@45a16b93: startup date [Fri Sep 21 10:14:55 IST 2018]; root of context hierarchy
+2018-09-21 10:15:05.166  WARN 3024 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-09-21 10:15:05.238  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/billing/downloadExcel],methods=[GET]}" onto public org.springframework.http.HttpEntity<byte[]> com.gpware.billing.controller.BillingController.downloadExcelReport(java.lang.String,java.lang.String,java.lang.String) throws java.io.IOException
+2018-09-21 10:15:05.239  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/billing/get/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.gpware.billing.dto.BillingDTO> com.gpware.billing.controller.BillingController.getBillingById(java.lang.Integer)
+2018-09-21 10:15:05.239  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/billing/delete/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.gpware.billing.controller.BillingController.deleteBilling(java.lang.Integer)
+2018-09-21 10:15:05.239  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/billing/getReportData],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.gpware.billing.dto.BillingReportDTO> com.gpware.billing.controller.BillingController.getReportData()
+2018-09-21 10:15:05.239  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/billing/add],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.gpware.billing.controller.BillingController.addBilling(com.gpware.billing.dto.BillingDTO)
+2018-09-21 10:15:05.244  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/billing/getBillingList],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.gpware.billing.dto.BillingDTO>> com.gpware.billing.controller.BillingController.getBillingList(java.lang.String,java.lang.String,java.lang.String)
+2018-09-21 10:15:05.248  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/getSearchList],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.gpware.billing.model.Customer>> com.gpware.billing.controller.CustomerController.getCustomersByNameOrMobile(java.lang.String)
+2018-09-21 10:15:05.249  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/delete/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.gpware.billing.controller.CustomerController.deleteCustomer(java.lang.Integer)
+2018-09-21 10:15:05.249  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/get/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.gpware.billing.model.Customer> com.gpware.billing.controller.CustomerController.getCustomerById(java.lang.Integer)
+2018-09-21 10:15:05.250  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/getAll],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.gpware.billing.model.Customer>> com.gpware.billing.controller.CustomerController.getAllCustomers(java.lang.String,java.lang.String)
+2018-09-21 10:15:05.251  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/add],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.gpware.billing.controller.CustomerController.addCustomer(com.gpware.billing.model.Customer)
+2018-09-21 10:15:05.251  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/update],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.gpware.billing.controller.CustomerController.updateCustomer(com.gpware.billing.model.Customer)
+2018-09-21 10:15:05.269  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/getSearchList],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.gpware.billing.model.Product>> com.gpware.billing.controller.ProductController.getCustomersByNameOrMobile(java.lang.String)
+2018-09-21 10:15:05.278  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/getAll],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.gpware.billing.model.Product>> com.gpware.billing.controller.ProductController.getAllProducts(java.lang.String,java.lang.String)
+2018-09-21 10:15:05.279  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/get/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.gpware.billing.model.Product> com.gpware.billing.controller.ProductController.getProductById(java.lang.Integer)
+2018-09-21 10:15:05.279  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/update],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.gpware.billing.controller.ProductController.updateCustomer(com.gpware.billing.model.Product)
+2018-09-21 10:15:05.281  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/delete/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.gpware.billing.controller.ProductController.deleteProduct(java.lang.Integer)
+2018-09-21 10:15:05.281  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.gpware.billing.controller.ProductController.updateProduct(com.gpware.billing.model.Product)
+2018-09-21 10:15:05.282  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/add],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.gpware.billing.controller.ProductController.addProduct(com.gpware.billing.model.Product)
+2018-09-21 10:15:05.282  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/home],methods=[GET]}" onto public java.lang.String com.gpware.billing.controller.WebController.showHomePage(org.springframework.ui.ModelMap)
+2018-09-21 10:15:05.282  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/billing],methods=[GET]}" onto public java.lang.String com.gpware.billing.controller.WebController.showBilling(org.springframework.ui.ModelMap)
+2018-09-21 10:15:05.283  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/print],methods=[GET]}" onto public java.lang.String com.gpware.billing.controller.WebController.showPrint(org.springframework.ui.ModelMap)
+2018-09-21 10:15:05.283  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/products],methods=[GET]}" onto public java.lang.String com.gpware.billing.controller.WebController.showProducts(org.springframework.ui.ModelMap)
+2018-09-21 10:15:05.283  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/reports],methods=[GET]}" onto public java.lang.String com.gpware.billing.controller.WebController.showReports(org.springframework.ui.ModelMap)
+2018-09-21 10:15:05.283  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customers],methods=[GET]}" onto public java.lang.String com.gpware.billing.controller.WebController.showCustomers(org.springframework.ui.ModelMap)
+2018-09-21 10:15:05.283  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-09-21 10:15:05.283  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-09-21 10:15:05.400  INFO 3024 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-21 10:15:05.402  INFO 3024 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-21 10:15:06.457  INFO 3024 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-09-21 10:15:06.580  INFO 3024 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-09-21 10:15:06.584  INFO 3024 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-09-21 10:15:06.588  INFO 3024 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-09-21 10:15:06.760  INFO 3024 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9097 (http) with context path ''
+2018-09-21 10:15:06.766  INFO 3024 --- [restartedMain] c.g.b.SpringBootWebServicesApplication   : Started SpringBootWebServicesApplication in 12.127 seconds (JVM running for 13.776)
+2018-09-21 10:15:29.270  INFO 3024 --- [http-nio-9097-exec-10] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-09-21 10:15:29.270  INFO 3024 --- [http-nio-9097-exec-10] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-09-21 10:15:29.367  INFO 3024 --- [http-nio-9097-exec-10] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 97 ms
+2018-09-21 10:15:33.290  WARN 3024 --- [http-nio-9097-exec-5] o.h.p.internal.ProcedureCallImpl         : HHH000456: Named parameters are used for a callable statement, but database metadata indicates named parameters are not supported.
+2018-09-21 10:15:33.308 DEBUG 3024 --- [http-nio-9097-exec-5] org.hibernate.SQL                        : 
+    {call GetReportData(?,?,?,?)}
+2018-09-21 10:15:33.395  INFO 3024 --- [http-nio-9097-exec-5] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2018-09-21 10:15:33.755 DEBUG 3024 --- [http-nio-9097-exec-5] org.hibernate.SQL                        : 
+    select
+        billing0_.id as id1_0_,
+        billing0_.createdby as createdb2_0_,
+        billing0_.createdon as createdo3_0_,
+        billing0_.customer_id as custome14_0_,
+        billing0_.discount as discount4_0_,
+        billing0_.cgst_percent as cgst_per5_0_,
+        billing0_.cgst_value as cgst_val6_0_,
+        billing0_.sgst_percent as sgst_per7_0_,
+        billing0_.sgst_value as sgst_val8_0_,
+        billing0_.notes as notes9_0_,
+        billing0_.status as status10_0_,
+        billing0_.tot_items as tot_ite11_0_,
+        billing0_.tot_value as tot_val12_0_,
+        billing0_.grand_total as grand_t13_0_ 
+    from
+        billing billing0_ 
+    where
+        billing0_.createdon>='2018-09-11 00:00:00' 
+        and billing0_.createdon<='2018-09-21 23:59:59' 
+    order by
+        billing0_.createdon desc
+2018-09-21 10:15:33.808 DEBUG 3024 --- [http-nio-9097-exec-5] org.hibernate.SQL                        : 
+    select
+        customer0_.id as id1_2_0_,
+        customer0_.aadhar as aadhar2_2_0_,
+        customer0_.isactive as isactive3_2_0_,
+        customer0_.address_1 as address_4_2_0_,
+        customer0_.address_2 as address_5_2_0_,
+        customer0_.city as city6_2_0_,
+        customer0_.country as country7_2_0_,
+        customer0_.createdby as createdb8_2_0_,
+        customer0_.createdon as createdo9_2_0_,
+        customer0_.dob as dob10_2_0_,
+        customer0_.email as email11_2_0_,
+        customer0_.gender as gender12_2_0_,
+        customer0_.gstin as gstin13_2_0_,
+        customer0_.lastupdatedby as lastupd14_2_0_,
+        customer0_.lastupdateon as lastupd15_2_0_,
+        customer0_.mobile as mobile16_2_0_,
+        customer0_.name as name17_2_0_,
+        customer0_.pincode as pincode18_2_0_,
+        customer0_.state as state19_2_0_,
+        customer0_.type as type20_2_0_ 
+    from
+        customer customer0_ 
+    where
+        customer0_.id=?
+2018-09-21 10:15:33.874 DEBUG 3024 --- [http-nio-9097-exec-5] org.hibernate.SQL                        : 
+    select
+        billingite0_.billing_id as billing_9_1_0_,
+        billingite0_.id as id1_1_0_,
+        billingite0_.id as id1_1_1_,
+        billingite0_.billing_id as billing_9_1_1_,
+        billingite0_.createdby as createdb2_1_1_,
+        billingite0_.createdon as createdo3_1_1_,
+        billingite0_.discount_percent as discount4_1_1_,
+        billingite0_.notes as notes5_1_1_,
+        billingite0_.product_id as product10_1_1_,
+        billingite0_.qty as qty6_1_1_,
+        billingite0_.status as status7_1_1_,
+        billingite0_.value as value8_1_1_,
+        product1_.id as id1_3_2_,
+        product1_.isactive as isactive2_3_2_,
+        product1_.code as code3_3_2_,
+        product1_.createdby as createdb4_3_2_,
+        product1_.createdon as createdo5_3_2_,
+        product1_.description as descript6_3_2_,
+        product1_.lastupdatedby as lastupda7_3_2_,
+        product1_.lastupdateon as lastupda8_3_2_,
+        product1_.measurement as measurem9_3_2_,
+        product1_.name as name10_3_2_,
+        product1_.type as type11_3_2_,
+        product1_.value as value12_3_2_ 
+    from
+        billing_det billingite0_ 
+    left outer join
+        product product1_ 
+            on billingite0_.product_id=product1_.id 
+    where
+        billingite0_.billing_id=?
+2018-09-21 10:15:33.913 DEBUG 3024 --- [http-nio-9097-exec-5] org.hibernate.SQL                        : 
+    select
+        billingite0_.billing_id as billing_9_1_0_,
+        billingite0_.id as id1_1_0_,
+        billingite0_.id as id1_1_1_,
+        billingite0_.billing_id as billing_9_1_1_,
+        billingite0_.createdby as createdb2_1_1_,
+        billingite0_.createdon as createdo3_1_1_,
+        billingite0_.discount_percent as discount4_1_1_,
+        billingite0_.notes as notes5_1_1_,
+        billingite0_.product_id as product10_1_1_,
+        billingite0_.qty as qty6_1_1_,
+        billingite0_.status as status7_1_1_,
+        billingite0_.value as value8_1_1_,
+        product1_.id as id1_3_2_,
+        product1_.isactive as isactive2_3_2_,
+        product1_.code as code3_3_2_,
+        product1_.createdby as createdb4_3_2_,
+        product1_.createdon as createdo5_3_2_,
+        product1_.description as descript6_3_2_,
+        product1_.lastupdatedby as lastupda7_3_2_,
+        product1_.lastupdateon as lastupda8_3_2_,
+        product1_.measurement as measurem9_3_2_,
+        product1_.name as name10_3_2_,
+        product1_.type as type11_3_2_,
+        product1_.value as value12_3_2_ 
+    from
+        billing_det billingite0_ 
+    left outer join
+        product product1_ 
+            on billingite0_.product_id=product1_.id 
+    where
+        billingite0_.billing_id=?
+2018-09-21 10:15:33.929 DEBUG 3024 --- [http-nio-9097-exec-5] org.hibernate.SQL                        : 
+    select
+        billingite0_.billing_id as billing_9_1_0_,
+        billingite0_.id as id1_1_0_,
+        billingite0_.id as id1_1_1_,
+        billingite0_.billing_id as billing_9_1_1_,
+        billingite0_.createdby as createdb2_1_1_,
+        billingite0_.createdon as createdo3_1_1_,
+        billingite0_.discount_percent as discount4_1_1_,
+        billingite0_.notes as notes5_1_1_,
+        billingite0_.product_id as product10_1_1_,
+        billingite0_.qty as qty6_1_1_,
+        billingite0_.status as status7_1_1_,
+        billingite0_.value as value8_1_1_,
+        product1_.id as id1_3_2_,
+        product1_.isactive as isactive2_3_2_,
+        product1_.code as code3_3_2_,
+        product1_.createdby as createdb4_3_2_,
+        product1_.createdon as createdo5_3_2_,
+        product1_.description as descript6_3_2_,
+        product1_.lastupdatedby as lastupda7_3_2_,
+        product1_.lastupdateon as lastupda8_3_2_,
+        product1_.measurement as measurem9_3_2_,
+        product1_.name as name10_3_2_,
+        product1_.type as type11_3_2_,
+        product1_.value as value12_3_2_ 
+    from
+        billing_det billingite0_ 
+    left outer join
+        product product1_ 
+            on billingite0_.product_id=product1_.id 
+    where
+        billingite0_.billing_id=?
+2018-09-21 10:15:33.934 DEBUG 3024 --- [http-nio-9097-exec-5] org.hibernate.SQL                        : 
+    select
+        billingite0_.billing_id as billing_9_1_0_,
+        billingite0_.id as id1_1_0_,
+        billingite0_.id as id1_1_1_,
+        billingite0_.billing_id as billing_9_1_1_,
+        billingite0_.createdby as createdb2_1_1_,
+        billingite0_.createdon as createdo3_1_1_,
+        billingite0_.discount_percent as discount4_1_1_,
+        billingite0_.notes as notes5_1_1_,
+        billingite0_.product_id as product10_1_1_,
+        billingite0_.qty as qty6_1_1_,
+        billingite0_.status as status7_1_1_,
+        billingite0_.value as value8_1_1_,
+        product1_.id as id1_3_2_,
+        product1_.isactive as isactive2_3_2_,
+        product1_.code as code3_3_2_,
+        product1_.createdby as createdb4_3_2_,
+        product1_.createdon as createdo5_3_2_,
+        product1_.description as descript6_3_2_,
+        product1_.lastupdatedby as lastupda7_3_2_,
+        product1_.lastupdateon as lastupda8_3_2_,
+        product1_.measurement as measurem9_3_2_,
+        product1_.name as name10_3_2_,
+        product1_.type as type11_3_2_,
+        product1_.value as value12_3_2_ 
+    from
+        billing_det billingite0_ 
+    left outer join
+        product product1_ 
+            on billingite0_.product_id=product1_.id 
+    where
+        billingite0_.billing_id=?
+2018-09-21 10:15:33.939 DEBUG 3024 --- [http-nio-9097-exec-5] org.hibernate.SQL                        : 
+    select
+        billingite0_.billing_id as billing_9_1_0_,
+        billingite0_.id as id1_1_0_,
+        billingite0_.id as id1_1_1_,
+        billingite0_.billing_id as billing_9_1_1_,
+        billingite0_.createdby as createdb2_1_1_,
+        billingite0_.createdon as createdo3_1_1_,
+        billingite0_.discount_percent as discount4_1_1_,
+        billingite0_.notes as notes5_1_1_,
+        billingite0_.product_id as product10_1_1_,
+        billingite0_.qty as qty6_1_1_,
+        billingite0_.status as status7_1_1_,
+        billingite0_.value as value8_1_1_,
+        product1_.id as id1_3_2_,
+        product1_.isactive as isactive2_3_2_,
+        product1_.code as code3_3_2_,
+        product1_.createdby as createdb4_3_2_,
+        product1_.createdon as createdo5_3_2_,
+        product1_.description as descript6_3_2_,
+        product1_.lastupdatedby as lastupda7_3_2_,
+        product1_.lastupdateon as lastupda8_3_2_,
+        product1_.measurement as measurem9_3_2_,
+        product1_.name as name10_3_2_,
+        product1_.type as type11_3_2_,
+        product1_.value as value12_3_2_ 
+    from
+        billing_det billingite0_ 
+    left outer join
+        product product1_ 
+            on billingite0_.product_id=product1_.id 
+    where
+        billingite0_.billing_id=?
+2018-09-21 11:26:47.666  WARN 3024 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=43m21s892ms606µs523ns).
+2018-09-21 11:26:52.642  WARN 3024 --- [http-nio-9097-exec-6] o.h.p.internal.ProcedureCallImpl         : HHH000456: Named parameters are used for a callable statement, but database metadata indicates named parameters are not supported.
+2018-09-21 11:26:52.642 DEBUG 3024 --- [http-nio-9097-exec-6] org.hibernate.SQL                        : 
+    {call GetReportData(?,?,?,?)}
+2018-09-21 11:26:52.660 DEBUG 3024 --- [http-nio-9097-exec-6] org.hibernate.SQL                        : 
+    select
+        billing0_.id as id1_0_,
+        billing0_.createdby as createdb2_0_,
+        billing0_.createdon as createdo3_0_,
+        billing0_.customer_id as custome14_0_,
+        billing0_.discount as discount4_0_,
+        billing0_.cgst_percent as cgst_per5_0_,
+        billing0_.cgst_value as cgst_val6_0_,
+        billing0_.sgst_percent as sgst_per7_0_,
+        billing0_.sgst_value as sgst_val8_0_,
+        billing0_.notes as notes9_0_,
+        billing0_.status as status10_0_,
+        billing0_.tot_items as tot_ite11_0_,
+        billing0_.tot_value as tot_val12_0_,
+        billing0_.grand_total as grand_t13_0_ 
+    from
+        billing billing0_ 
+    where
+        billing0_.createdon>='2018-09-11 00:00:00' 
+        and billing0_.createdon<='2018-09-21 23:59:59' 
+    order by
+        billing0_.createdon desc
+2018-09-21 11:26:52.664 DEBUG 3024 --- [http-nio-9097-exec-6] org.hibernate.SQL                        : 
+    select
+        customer0_.id as id1_2_0_,
+        customer0_.aadhar as aadhar2_2_0_,
+        customer0_.isactive as isactive3_2_0_,
+        customer0_.address_1 as address_4_2_0_,
+        customer0_.address_2 as address_5_2_0_,
+        customer0_.city as city6_2_0_,
+        customer0_.country as country7_2_0_,
+        customer0_.createdby as createdb8_2_0_,
+        customer0_.createdon as createdo9_2_0_,
+        customer0_.dob as dob10_2_0_,
+        customer0_.email as email11_2_0_,
+        customer0_.gender as gender12_2_0_,
+        customer0_.gstin as gstin13_2_0_,
+        customer0_.lastupdatedby as lastupd14_2_0_,
+        customer0_.lastupdateon as lastupd15_2_0_,
+        customer0_.mobile as mobile16_2_0_,
+        customer0_.name as name17_2_0_,
+        customer0_.pincode as pincode18_2_0_,
+        customer0_.state as state19_2_0_,
+        customer0_.type as type20_2_0_ 
+    from
+        customer customer0_ 
+    where
+        customer0_.id=?
+2018-09-21 11:26:52.668 DEBUG 3024 --- [http-nio-9097-exec-6] org.hibernate.SQL                        : 
+    select
+        billingite0_.billing_id as billing_9_1_0_,
+        billingite0_.id as id1_1_0_,
+        billingite0_.id as id1_1_1_,
+        billingite0_.billing_id as billing_9_1_1_,
+        billingite0_.createdby as createdb2_1_1_,
+        billingite0_.createdon as createdo3_1_1_,
+        billingite0_.discount_percent as discount4_1_1_,
+        billingite0_.notes as notes5_1_1_,
+        billingite0_.product_id as product10_1_1_,
+        billingite0_.qty as qty6_1_1_,
+        billingite0_.status as status7_1_1_,
+        billingite0_.value as value8_1_1_,
+        product1_.id as id1_3_2_,
+        product1_.isactive as isactive2_3_2_,
+        product1_.code as code3_3_2_,
+        product1_.createdby as createdb4_3_2_,
+        product1_.createdon as createdo5_3_2_,
+        product1_.description as descript6_3_2_,
+        product1_.lastupdatedby as lastupda7_3_2_,
+        product1_.lastupdateon as lastupda8_3_2_,
+        product1_.measurement as measurem9_3_2_,
+        product1_.name as name10_3_2_,
+        product1_.type as type11_3_2_,
+        product1_.value as value12_3_2_ 
+    from
+        billing_det billingite0_ 
+    left outer join
+        product product1_ 
+            on billingite0_.product_id=product1_.id 
+    where
+        billingite0_.billing_id=?
+2018-09-21 11:26:52.676 DEBUG 3024 --- [http-nio-9097-exec-6] org.hibernate.SQL                        : 
+    select
+        billingite0_.billing_id as billing_9_1_0_,
+        billingite0_.id as id1_1_0_,
+        billingite0_.id as id1_1_1_,
+        billingite0_.billing_id as billing_9_1_1_,
+        billingite0_.createdby as createdb2_1_1_,
+        billingite0_.createdon as createdo3_1_1_,
+        billingite0_.discount_percent as discount4_1_1_,
+        billingite0_.notes as notes5_1_1_,
+        billingite0_.product_id as product10_1_1_,
+        billingite0_.qty as qty6_1_1_,
+        billingite0_.status as status7_1_1_,
+        billingite0_.value as value8_1_1_,
+        product1_.id as id1_3_2_,
+        product1_.isactive as isactive2_3_2_,
+        product1_.code as code3_3_2_,
+        product1_.createdby as createdb4_3_2_,
+        product1_.createdon as createdo5_3_2_,
+        product1_.description as descript6_3_2_,
+        product1_.lastupdatedby as lastupda7_3_2_,
+        product1_.lastupdateon as lastupda8_3_2_,
+        product1_.measurement as measurem9_3_2_,
+        product1_.name as name10_3_2_,
+        product1_.type as type11_3_2_,
+        product1_.value as value12_3_2_ 
+    from
+        billing_det billingite0_ 
+    left outer join
+        product product1_ 
+            on billingite0_.product_id=product1_.id 
+    where
+        billingite0_.billing_id=?
+2018-09-21 11:26:52.680 DEBUG 3024 --- [http-nio-9097-exec-6] org.hibernate.SQL                        : 
+    select
+        billingite0_.billing_id as billing_9_1_0_,
+        billingite0_.id as id1_1_0_,
+        billingite0_.id as id1_1_1_,
+        billingite0_.billing_id as billing_9_1_1_,
+        billingite0_.createdby as createdb2_1_1_,
+        billingite0_.createdon as createdo3_1_1_,
+        billingite0_.discount_percent as discount4_1_1_,
+        billingite0_.notes as notes5_1_1_,
+        billingite0_.product_id as product10_1_1_,
+        billingite0_.qty as qty6_1_1_,
+        billingite0_.status as status7_1_1_,
+        billingite0_.value as value8_1_1_,
+        product1_.id as id1_3_2_,
+        product1_.isactive as isactive2_3_2_,
+        product1_.code as code3_3_2_,
+        product1_.createdby as createdb4_3_2_,
+        product1_.createdon as createdo5_3_2_,
+        product1_.description as descript6_3_2_,
+        product1_.lastupdatedby as lastupda7_3_2_,
+        product1_.lastupdateon as lastupda8_3_2_,
+        product1_.measurement as measurem9_3_2_,
+        product1_.name as name10_3_2_,
+        product1_.type as type11_3_2_,
+        product1_.value as value12_3_2_ 
+    from
+        billing_det billingite0_ 
+    left outer join
+        product product1_ 
+            on billingite0_.product_id=product1_.id 
+    where
+        billingite0_.billing_id=?
+2018-09-21 11:26:52.688 DEBUG 3024 --- [http-nio-9097-exec-6] org.hibernate.SQL                        : 
+    select
+        billingite0_.billing_id as billing_9_1_0_,
+        billingite0_.id as id1_1_0_,
+        billingite0_.id as id1_1_1_,
+        billingite0_.billing_id as billing_9_1_1_,
+        billingite0_.createdby as createdb2_1_1_,
+        billingite0_.createdon as createdo3_1_1_,
+        billingite0_.discount_percent as discount4_1_1_,
+        billingite0_.notes as notes5_1_1_,
+        billingite0_.product_id as product10_1_1_,
+        billingite0_.qty as qty6_1_1_,
+        billingite0_.status as status7_1_1_,
+        billingite0_.value as value8_1_1_,
+        product1_.id as id1_3_2_,
+        product1_.isactive as isactive2_3_2_,
+        product1_.code as code3_3_2_,
+        product1_.createdby as createdb4_3_2_,
+        product1_.createdon as createdo5_3_2_,
+        product1_.description as descript6_3_2_,
+        product1_.lastupdatedby as lastupda7_3_2_,
+        product1_.lastupdateon as lastupda8_3_2_,
+        product1_.measurement as measurem9_3_2_,
+        product1_.name as name10_3_2_,
+        product1_.type as type11_3_2_,
+        product1_.value as value12_3_2_ 
+    from
+        billing_det billingite0_ 
+    left outer join
+        product product1_ 
+            on billingite0_.product_id=product1_.id 
+    where
+        billingite0_.billing_id=?
+2018-09-21 11:26:52.692 DEBUG 3024 --- [http-nio-9097-exec-6] org.hibernate.SQL                        : 
+    select
+        billingite0_.billing_id as billing_9_1_0_,
+        billingite0_.id as id1_1_0_,
+        billingite0_.id as id1_1_1_,
+        billingite0_.billing_id as billing_9_1_1_,
+        billingite0_.createdby as createdb2_1_1_,
+        billingite0_.createdon as createdo3_1_1_,
+        billingite0_.discount_percent as discount4_1_1_,
+        billingite0_.notes as notes5_1_1_,
+        billingite0_.product_id as product10_1_1_,
+        billingite0_.qty as qty6_1_1_,
+        billingite0_.status as status7_1_1_,
+        billingite0_.value as value8_1_1_,
+        product1_.id as id1_3_2_,
+        product1_.isactive as isactive2_3_2_,
+        product1_.code as code3_3_2_,
+        product1_.createdby as createdb4_3_2_,
+        product1_.createdon as createdo5_3_2_,
+        product1_.description as descript6_3_2_,
+        product1_.lastupdatedby as lastupda7_3_2_,
+        product1_.lastupdateon as lastupda8_3_2_,
+        product1_.measurement as measurem9_3_2_,
+        product1_.name as name10_3_2_,
+        product1_.type as type11_3_2_,
+        product1_.value as value12_3_2_ 
+    from
+        billing_det billingite0_ 
+    left outer join
+        product product1_ 
+            on billingite0_.product_id=product1_.id 
+    where
+        billingite0_.billing_id=?
+2018-09-21 11:32:10.913  WARN 3024 --- [http-nio-9097-exec-4] o.h.p.internal.ProcedureCallImpl         : HHH000456: Named parameters are used for a callable statement, but database metadata indicates named parameters are not supported.
+2018-09-21 11:32:10.913 DEBUG 3024 --- [http-nio-9097-exec-4] org.hibernate.SQL                        : 
+    {call GetReportData(?,?,?,?)}
+2018-09-21 11:32:10.923 DEBUG 3024 --- [http-nio-9097-exec-4] org.hibernate.SQL                        : 
+    select
+        billing0_.id as id1_0_,
+        billing0_.createdby as createdb2_0_,
+        billing0_.createdon as createdo3_0_,
+        billing0_.customer_id as custome14_0_,
+        billing0_.discount as discount4_0_,
+        billing0_.cgst_percent as cgst_per5_0_,
+        billing0_.cgst_value as cgst_val6_0_,
+        billing0_.sgst_percent as sgst_per7_0_,
+        billing0_.sgst_value as sgst_val8_0_,
+        billing0_.notes as notes9_0_,
+        billing0_.status as status10_0_,
+        billing0_.tot_items as tot_ite11_0_,
+        billing0_.tot_value as tot_val12_0_,
+        billing0_.grand_total as grand_t13_0_ 
+    from
+        billing billing0_ 
+    where
+        billing0_.createdon>='2018-09-11 00:00:00' 
+        and billing0_.createdon<='2018-09-21 23:59:59' 
+    order by
+        billing0_.createdon desc
+2018-09-21 11:32:10.926 DEBUG 3024 --- [http-nio-9097-exec-4] org.hibernate.SQL                        : 
+    select
+        customer0_.id as id1_2_0_,
+        customer0_.aadhar as aadhar2_2_0_,
+        customer0_.isactive as isactive3_2_0_,
+        customer0_.address_1 as address_4_2_0_,
+        customer0_.address_2 as address_5_2_0_,
+        customer0_.city as city6_2_0_,
+        customer0_.country as country7_2_0_,
+        customer0_.createdby as createdb8_2_0_,
+        customer0_.createdon as createdo9_2_0_,
+        customer0_.dob as dob10_2_0_,
+        customer0_.email as email11_2_0_,
+        customer0_.gender as gender12_2_0_,
+        customer0_.gstin as gstin13_2_0_,
+        customer0_.lastupdatedby as lastupd14_2_0_,
+        customer0_.lastupdateon as lastupd15_2_0_,
+        customer0_.mobile as mobile16_2_0_,
+        customer0_.name as name17_2_0_,
+        customer0_.pincode as pincode18_2_0_,
+        customer0_.state as state19_2_0_,
+        customer0_.type as type20_2_0_ 
+    from
+        customer customer0_ 
+    where
+        customer0_.id=?
+2018-09-21 11:32:10.929 DEBUG 3024 --- [http-nio-9097-exec-4] org.hibernate.SQL                        : 
+    select
+        billingite0_.billing_id as billing_9_1_0_,
+        billingite0_.id as id1_1_0_,
+        billingite0_.id as id1_1_1_,
+        billingite0_.billing_id as billing_9_1_1_,
+        billingite0_.createdby as createdb2_1_1_,
+        billingite0_.createdon as createdo3_1_1_,
+        billingite0_.discount_percent as discount4_1_1_,
+        billingite0_.notes as notes5_1_1_,
+        billingite0_.product_id as product10_1_1_,
+        billingite0_.qty as qty6_1_1_,
+        billingite0_.status as status7_1_1_,
+        billingite0_.value as value8_1_1_,
+        product1_.id as id1_3_2_,
+        product1_.isactive as isactive2_3_2_,
+        product1_.code as code3_3_2_,
+        product1_.createdby as createdb4_3_2_,
+        product1_.createdon as createdo5_3_2_,
+        product1_.description as descript6_3_2_,
+        product1_.lastupdatedby as lastupda7_3_2_,
+        product1_.lastupdateon as lastupda8_3_2_,
+        product1_.measurement as measurem9_3_2_,
+        product1_.name as name10_3_2_,
+        product1_.type as type11_3_2_,
+        product1_.value as value12_3_2_ 
+    from
+        billing_det billingite0_ 
+    left outer join
+        product product1_ 
+            on billingite0_.product_id=product1_.id 
+    where
+        billingite0_.billing_id=?
+2018-09-21 11:32:10.933 DEBUG 3024 --- [http-nio-9097-exec-4] org.hibernate.SQL                        : 
+    select
+        billingite0_.billing_id as billing_9_1_0_,
+        billingite0_.id as id1_1_0_,
+        billingite0_.id as id1_1_1_,
+        billingite0_.billing_id as billing_9_1_1_,
+        billingite0_.createdby as createdb2_1_1_,
+        billingite0_.createdon as createdo3_1_1_,
+        billingite0_.discount_percent as discount4_1_1_,
+        billingite0_.notes as notes5_1_1_,
+        billingite0_.product_id as product10_1_1_,
+        billingite0_.qty as qty6_1_1_,
+        billingite0_.status as status7_1_1_,
+        billingite0_.value as value8_1_1_,
+        product1_.id as id1_3_2_,
+        product1_.isactive as isactive2_3_2_,
+        product1_.code as code3_3_2_,
+        product1_.createdby as createdb4_3_2_,
+        product1_.createdon as createdo5_3_2_,
+        product1_.description as descript6_3_2_,
+        product1_.lastupdatedby as lastupda7_3_2_,
+        product1_.lastupdateon as lastupda8_3_2_,
+        product1_.measurement as measurem9_3_2_,
+        product1_.name as name10_3_2_,
+        product1_.type as type11_3_2_,
+        product1_.value as value12_3_2_ 
+    from
+        billing_det billingite0_ 
+    left outer join
+        product product1_ 
+            on billingite0_.product_id=product1_.id 
+    where
+        billingite0_.billing_id=?
+2018-09-21 11:32:10.937 DEBUG 3024 --- [http-nio-9097-exec-4] org.hibernate.SQL                        : 
+    select
+        billingite0_.billing_id as billing_9_1_0_,
+        billingite0_.id as id1_1_0_,
+        billingite0_.id as id1_1_1_,
+        billingite0_.billing_id as billing_9_1_1_,
+        billingite0_.createdby as createdb2_1_1_,
+        billingite0_.createdon as createdo3_1_1_,
+        billingite0_.discount_percent as discount4_1_1_,
+        billingite0_.notes as notes5_1_1_,
+        billingite0_.product_id as product10_1_1_,
+        billingite0_.qty as qty6_1_1_,
+        billingite0_.status as status7_1_1_,
+        billingite0_.value as value8_1_1_,
+        product1_.id as id1_3_2_,
+        product1_.isactive as isactive2_3_2_,
+        product1_.code as code3_3_2_,
+        product1_.createdby as createdb4_3_2_,
+        product1_.createdon as createdo5_3_2_,
+        product1_.description as descript6_3_2_,
+        product1_.lastupdatedby as lastupda7_3_2_,
+        product1_.lastupdateon as lastupda8_3_2_,
+        product1_.measurement as measurem9_3_2_,
+        product1_.name as name10_3_2_,
+        product1_.type as type11_3_2_,
+        product1_.value as value12_3_2_ 
+    from
+        billing_det billingite0_ 
+    left outer join
+        product product1_ 
+            on billingite0_.product_id=product1_.id 
+    where
+        billingite0_.billing_id=?
+2018-09-21 11:32:10.942 DEBUG 3024 --- [http-nio-9097-exec-4] org.hibernate.SQL                        : 
+    select
+        billingite0_.billing_id as billing_9_1_0_,
+        billingite0_.id as id1_1_0_,
+        billingite0_.id as id1_1_1_,
+        billingite0_.billing_id as billing_9_1_1_,
+        billingite0_.createdby as createdb2_1_1_,
+        billingite0_.createdon as createdo3_1_1_,
+        billingite0_.discount_percent as discount4_1_1_,
+        billingite0_.notes as notes5_1_1_,
+        billingite0_.product_id as product10_1_1_,
+        billingite0_.qty as qty6_1_1_,
+        billingite0_.status as status7_1_1_,
+        billingite0_.value as value8_1_1_,
+        product1_.id as id1_3_2_,
+        product1_.isactive as isactive2_3_2_,
+        product1_.code as code3_3_2_,
+        product1_.createdby as createdb4_3_2_,
+        product1_.createdon as createdo5_3_2_,
+        product1_.description as descript6_3_2_,
+        product1_.lastupdatedby as lastupda7_3_2_,
+        product1_.lastupdateon as lastupda8_3_2_,
+        product1_.measurement as measurem9_3_2_,
+        product1_.name as name10_3_2_,
+        product1_.type as type11_3_2_,
+        product1_.value as value12_3_2_ 
+    from
+        billing_det billingite0_ 
+    left outer join
+        product product1_ 
+            on billingite0_.product_id=product1_.id 
+    where
+        billingite0_.billing_id=?
+2018-09-21 11:32:10.945 DEBUG 3024 --- [http-nio-9097-exec-4] org.hibernate.SQL                        : 
+    select
+        billingite0_.billing_id as billing_9_1_0_,
+        billingite0_.id as id1_1_0_,
+        billingite0_.id as id1_1_1_,
+        billingite0_.billing_id as billing_9_1_1_,
+        billingite0_.createdby as createdb2_1_1_,
+        billingite0_.createdon as createdo3_1_1_,
+        billingite0_.discount_percent as discount4_1_1_,
+        billingite0_.notes as notes5_1_1_,
+        billingite0_.product_id as product10_1_1_,
+        billingite0_.qty as qty6_1_1_,
+        billingite0_.status as status7_1_1_,
+        billingite0_.value as value8_1_1_,
+        product1_.id as id1_3_2_,
+        product1_.isactive as isactive2_3_2_,
+        product1_.code as code3_3_2_,
+        product1_.createdby as createdb4_3_2_,
+        product1_.createdon as createdo5_3_2_,
+        product1_.description as descript6_3_2_,
+        product1_.lastupdatedby as lastupda7_3_2_,
+        product1_.lastupdateon as lastupda8_3_2_,
+        product1_.measurement as measurem9_3_2_,
+        product1_.name as name10_3_2_,
+        product1_.type as type11_3_2_,
+        product1_.value as value12_3_2_ 
+    from
+        billing_det billingite0_ 
+    left outer join
+        product product1_ 
+            on billingite0_.product_id=product1_.id 
+    where
+        billingite0_.billing_id=?
+2018-09-21 11:34:28.664  WARN 3024 --- [http-nio-9097-exec-1] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 69 in HQL: [FROM com.gpware.billing.model.Customer as cust where cust.name like ? or cust.mobile like ?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2018-09-21 11:34:28.668  WARN 3024 --- [http-nio-9097-exec-1] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 91 in HQL: [FROM com.gpware.billing.model.Customer as cust where cust.name like ? or cust.mobile like ?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2018-09-21 11:34:28.676 DEBUG 3024 --- [http-nio-9097-exec-1] org.hibernate.SQL                        : 
+    select
+        customer0_.id as id1_2_,
+        customer0_.aadhar as aadhar2_2_,
+        customer0_.isactive as isactive3_2_,
+        customer0_.address_1 as address_4_2_,
+        customer0_.address_2 as address_5_2_,
+        customer0_.city as city6_2_,
+        customer0_.country as country7_2_,
+        customer0_.createdby as createdb8_2_,
+        customer0_.createdon as createdo9_2_,
+        customer0_.dob as dob10_2_,
+        customer0_.email as email11_2_,
+        customer0_.gender as gender12_2_,
+        customer0_.gstin as gstin13_2_,
+        customer0_.lastupdatedby as lastupd14_2_,
+        customer0_.lastupdateon as lastupd15_2_,
+        customer0_.mobile as mobile16_2_,
+        customer0_.name as name17_2_,
+        customer0_.pincode as pincode18_2_,
+        customer0_.state as state19_2_,
+        customer0_.type as type20_2_ 
+    from
+        customer customer0_ 
+    where
+        customer0_.name like ? 
+        or customer0_.mobile like ?
+2018-09-21 11:34:34.499  WARN 3024 --- [http-nio-9097-exec-2] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 66 in HQL: [FROM com.gpware.billing.model.Product as prd where prd.name like ? or prd.code like ?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2018-09-21 11:34:34.499  WARN 3024 --- [http-nio-9097-exec-2] o.h.hql.internal.ast.HqlSqlWalker        : [DEPRECATION] Encountered positional parameter near line 1, column 85 in HQL: [FROM com.gpware.billing.model.Product as prd where prd.name like ? or prd.code like ?].  Positional parameter are considered deprecated; use named parameters or JPA-style positional parameters instead.
+2018-09-21 11:34:34.499 DEBUG 3024 --- [http-nio-9097-exec-2] org.hibernate.SQL                        : 
+    select
+        product0_.id as id1_3_,
+        product0_.isactive as isactive2_3_,
+        product0_.code as code3_3_,
+        product0_.createdby as createdb4_3_,
+        product0_.createdon as createdo5_3_,
+        product0_.description as descript6_3_,
+        product0_.lastupdatedby as lastupda7_3_,
+        product0_.lastupdateon as lastupda8_3_,
+        product0_.measurement as measurem9_3_,
+        product0_.name as name10_3_,
+        product0_.type as type11_3_,
+        product0_.value as value12_3_ 
+    from
+        product product0_ 
+    where
+        product0_.name like ? 
+        or product0_.code like ?
+2018-09-21 11:34:34.624 DEBUG 3024 --- [http-nio-9097-exec-8] org.hibernate.SQL                        : 
+    select
+        product0_.id as id1_3_,
+        product0_.isactive as isactive2_3_,
+        product0_.code as code3_3_,
+        product0_.createdby as createdb4_3_,
+        product0_.createdon as createdo5_3_,
+        product0_.description as descript6_3_,
+        product0_.lastupdatedby as lastupda7_3_,
+        product0_.lastupdateon as lastupda8_3_,
+        product0_.measurement as measurem9_3_,
+        product0_.name as name10_3_,
+        product0_.type as type11_3_,
+        product0_.value as value12_3_ 
+    from
+        product product0_ 
+    where
+        product0_.name like ? 
+        or product0_.code like ?
+2018-09-21 12:48:50.400  INFO 3024 --- [Thread-6] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@45a16b93: startup date [Fri Sep 21 10:14:55 IST 2018]; root of context hierarchy
+2018-09-21 12:48:50.421  INFO 3024 --- [Thread-6] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-09-21 12:48:50.423  INFO 3024 --- [Thread-6] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-09-21 12:48:50.427  INFO 3024 --- [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-09-21 12:48:50.436  INFO 3024 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-09-21 12:48:50.442  INFO 3024 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-09-21 12:48:51.240 ERROR 3024 --- [restartedMain] o.s.b.c.l.LoggingApplicationListener     : Cannot set level: TRACE  for 'org.hibernate.type.descriptor.sql.BasicBinder'
+2018-09-21 12:48:51.247  INFO 3024 --- [restartedMain] c.g.b.SpringBootWebServicesApplication   : Starting SpringBootWebServicesApplication on CDC2-L-33BW4H2 with PID 3024 (started by prabu.devarajan in C:\Prabu Devarajan\OneDrive - Accenture\1. Fun\eclipse-oxygen-workspace\billing)
+2018-09-21 12:48:51.249  INFO 3024 --- [restartedMain] c.g.b.SpringBootWebServicesApplication   : No active profile set, falling back to default profiles: default
+2018-09-21 12:48:51.253  INFO 3024 --- [restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7efefd8c: startup date [Fri Sep 21 12:48:51 IST 2018]; root of context hierarchy
+2018-09-21 12:48:51.968  INFO 3024 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5768c96f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-09-21 12:48:52.505  INFO 3024 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9097 (http)
+2018-09-21 12:48:52.507  INFO 3024 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-09-21 12:48:52.508  INFO 3024 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-09-21 12:48:52.969  INFO 3024 --- [localhost-startStop-1] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2018-09-21 12:48:52.974  INFO 3024 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-09-21 12:48:52.974  INFO 3024 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1721 ms
+2018-09-21 12:48:52.988  INFO 3024 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2018-09-21 12:48:52.988  INFO 3024 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-09-21 12:48:52.988  INFO 3024 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-09-21 12:48:52.988  INFO 3024 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-09-21 12:48:52.988  INFO 3024 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-09-21 12:48:53.054  INFO 3024 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2018-09-21 12:48:53.069  INFO 3024 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2018-09-21 12:48:53.079  INFO 3024 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-09-21 12:48:53.079  INFO 3024 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-09-21 12:48:53.193  INFO 3024 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2018-09-21 12:48:53.457  INFO 3024 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-09-21 12:48:53.591  INFO 3024 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-21 12:48:53.681  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@7efefd8c: startup date [Fri Sep 21 12:48:51 IST 2018]; root of context hierarchy
+2018-09-21 12:48:53.685  WARN 3024 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2018-09-21 12:48:53.692  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/billing/downloadExcel],methods=[GET]}" onto public org.springframework.http.HttpEntity<byte[]> com.gpware.billing.controller.BillingController.downloadExcelReport(java.lang.String,java.lang.String,java.lang.String) throws java.io.IOException
+2018-09-21 12:48:53.696  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/billing/get/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.gpware.billing.dto.BillingDTO> com.gpware.billing.controller.BillingController.getBillingById(java.lang.Integer)
+2018-09-21 12:48:53.697  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/billing/delete/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.gpware.billing.controller.BillingController.deleteBilling(java.lang.Integer)
+2018-09-21 12:48:53.697  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/billing/getReportData],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.gpware.billing.dto.BillingReportDTO> com.gpware.billing.controller.BillingController.getReportData()
+2018-09-21 12:48:53.698  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/billing/add],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.gpware.billing.controller.BillingController.addBilling(com.gpware.billing.dto.BillingDTO)
+2018-09-21 12:48:53.698  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/billing/getBillingList],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.gpware.billing.dto.BillingDTO>> com.gpware.billing.controller.BillingController.getBillingList(java.lang.String,java.lang.String,java.lang.String)
+2018-09-21 12:48:53.698  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/getSearchList],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.gpware.billing.model.Customer>> com.gpware.billing.controller.CustomerController.getCustomersByNameOrMobile(java.lang.String)
+2018-09-21 12:48:53.702  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/delete/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.gpware.billing.controller.CustomerController.deleteCustomer(java.lang.Integer)
+2018-09-21 12:48:53.702  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/get/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.gpware.billing.model.Customer> com.gpware.billing.controller.CustomerController.getCustomerById(java.lang.Integer)
+2018-09-21 12:48:53.702  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/getAll],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.gpware.billing.model.Customer>> com.gpware.billing.controller.CustomerController.getAllCustomers(java.lang.String,java.lang.String)
+2018-09-21 12:48:53.702  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/add],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.gpware.billing.controller.CustomerController.addCustomer(com.gpware.billing.model.Customer)
+2018-09-21 12:48:53.702  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customer/update],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.gpware.billing.controller.CustomerController.updateCustomer(com.gpware.billing.model.Customer)
+2018-09-21 12:48:53.706  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/getSearchList],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.gpware.billing.model.Product>> com.gpware.billing.controller.ProductController.getCustomersByNameOrMobile(java.lang.String)
+2018-09-21 12:48:53.708  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/getAll],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.gpware.billing.model.Product>> com.gpware.billing.controller.ProductController.getAllProducts(java.lang.String,java.lang.String)
+2018-09-21 12:48:53.709  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/get/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.gpware.billing.model.Product> com.gpware.billing.controller.ProductController.getProductById(java.lang.Integer)
+2018-09-21 12:48:53.710  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/update],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.gpware.billing.controller.ProductController.updateCustomer(com.gpware.billing.model.Product)
+2018-09-21 12:48:53.711  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/delete/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.gpware.billing.controller.ProductController.deleteProduct(java.lang.Integer)
+2018-09-21 12:48:53.711  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.gpware.billing.controller.ProductController.updateProduct(com.gpware.billing.model.Product)
+2018-09-21 12:48:53.711  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/product/add],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.String> com.gpware.billing.controller.ProductController.addProduct(com.gpware.billing.model.Product)
+2018-09-21 12:48:53.714  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/home],methods=[GET]}" onto public java.lang.String com.gpware.billing.controller.WebController.showHomePage(org.springframework.ui.ModelMap)
+2018-09-21 12:48:53.714  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/billing],methods=[GET]}" onto public java.lang.String com.gpware.billing.controller.WebController.showBilling(org.springframework.ui.ModelMap)
+2018-09-21 12:48:53.714  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/print],methods=[GET]}" onto public java.lang.String com.gpware.billing.controller.WebController.showPrint(org.springframework.ui.ModelMap)
+2018-09-21 12:48:53.714  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/products],methods=[GET]}" onto public java.lang.String com.gpware.billing.controller.WebController.showProducts(org.springframework.ui.ModelMap)
+2018-09-21 12:48:53.715  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/reports],methods=[GET]}" onto public java.lang.String com.gpware.billing.controller.WebController.showReports(org.springframework.ui.ModelMap)
+2018-09-21 12:48:53.715  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/customers],methods=[GET]}" onto public java.lang.String com.gpware.billing.controller.WebController.showCustomers(org.springframework.ui.ModelMap)
+2018-09-21 12:48:53.716  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-09-21 12:48:53.720  INFO 3024 --- [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-09-21 12:48:53.728  INFO 3024 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-21 12:48:53.728  INFO 3024 --- [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-21 12:48:53.956  INFO 3024 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2018-09-21 12:48:53.986  INFO 3024 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-09-21 12:48:53.987  INFO 3024 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Bean with name 'dataSource' has been autodetected for JMX exposure
+2018-09-21 12:48:53.989  INFO 3024 --- [restartedMain] o.s.j.e.a.AnnotationMBeanExporter        : Located MBean 'dataSource': registering with JMX server as MBean [com.zaxxer.hikari:name=dataSource,type=HikariDataSource]
+2018-09-21 12:48:54.003  INFO 3024 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9097 (http) with context path ''
+2018-09-21 12:48:54.004  INFO 3024 --- [restartedMain] c.g.b.SpringBootWebServicesApplication   : Started SpringBootWebServicesApplication in 2.816 seconds (JVM running for 9247.657)
+2018-09-21 12:48:54.013  INFO 3024 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged

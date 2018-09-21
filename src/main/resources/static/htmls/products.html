@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	    <meta name='title' content='Gpware - Info'>
+	    <meta name='description' content=''>
+	    <meta name='url' content=''>
+	    <meta name='keywords' content=''>
+		
+		<meta property='og:title' content='Gpware - Info' />
+		<meta property='og:type' content='Website' />
+		<meta property='og:url' content='' />
+		<meta property='og:description' content='' />
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+		<!-- <link href="https://fonts.googleapis.com/css?family=Hind+Madurai:300,400,500,600,700&amp;subset=tamil" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">
+		 -->
+		 
+		<link href="assets/fonts/hind-madurai.css" rel="stylesheet">
+		<link href="assets/fonts/allerta-stencil.css" rel="stylesheet">
+		
+		<link rel="Stylesheet" href="assets/css/bootstrap.v4.1.3.css" />
+		<link rel="stylesheet" href="assets/css/styles.css" />
+	    <link rel="stylesheet" href="assets/css/daterangepicker.css" />
+	    <link rel="stylesheet" href="assets/css/jsgrid.css" />
+	    
+	    <link rel="icon" href="assets/img/gpware-logo-1.png" sizes="16x16" type="image/png">
+	    
+	    <script src="assets/js/jquery-3.3.1.min.js"></script>
+	    <script src="assets/js/bootstrap.v4.1.3.js"></script>
+	    <script src="assets/js/jsgrid.js"></script>
+	    
+	    <script src="assets/js/date.moment.js"></script>
+	    <script src="assets/js/daterangepicker.js"></script>
+	    
+		<title>Gpware - Billing</title>
+	</head>
+	<body>
+		<div class="loader-container" id="pageLoadingContainer">
+            <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="alert alert-success my-alert" id="prod-add-success" style="display: none;">
+			<button type="button" class="close" data-dismiss="alert">x</button>
+			<strong>Success! </strong> Product have added successfully.
+		</div>
+		<section class="sec-banner">
+			<div class="banner_text">
+				<a href="index.html"><h1 class="head-title-2">GPWARE</h1></a>
+			</div>
+		</section>
+		<section class="sec-menu">
+			<div class="container">
+				<ul class="nav nav-tabs">
+					<li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="/billing.html">Billing</a></li>
+					<li class="nav-item"><a class="nav-link active" href="/products.html">Products</a></li>
+					<li class="nav-item"><a class="nav-link" href="/customers.html">Customers</a></li>
+					<li class="nav-item"><a class="nav-link" href="/reports.html">Reports</a></li>
+				</ul>
+			</div>
+		</section>
+		<section class="sec-body">
+			<div class="container">
+				<div class="row ">
+					<div class="col-4">
+						<h1>Product List</h1>
+					</div>
+					<div class="col-6 text-right">
+						<button type="button" class="btn btn-primary add-new-product" >Add New Product</button>
+						<button type="button" class="btn btn-secondary reload-products" >Reload</button>
+					</div>
+				</div>
+				<div class="row mt-3">
+					<div class="col-7 ">
+						<div class="form-group" >
+							<label for="prdNameMobile" class="prd-label">Name or Code</label> 
+							<input type="text" id="prdNameMobile" class="form-control col-sm-5" placeholder="Name or Code">
+						</div>
+					</div>
+					<div class="col-3 text-right">
+						<div class="form-group" >
+							<label for="prdOrderBy" class="prd-label">Order By</label>
+							<select id="prdOrderBy" class="form-control">
+								<option value="8" selected="selected">Recently Added First</option>
+								<option value="7">Recently Added Last</option>
+								
+								<option value="1">Ascending By Name</option>
+								<option value="2">Descending By Name</option>
+								
+								<option value="3">Ascending By Code</option>
+								<option value="4">Descending By Code</option>
+								
+								<option value="5">Ascending By Value</option>
+								<option value="6">Descending By Value</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-10">
+						<div id="prd-managment-grid" class="jsgrid"></div>
+					</div>
+				</div>
+				<div class="row mt-5">
+					<div class="col-10">
+						<button type="button" class="btn btn-primary add-new-product">Add New Product</button>
+						<button type="button" class="btn btn-secondary reload-products" >Reload</button>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="sec-footor">
+			<div class="container">
+                <div class="footor-content">
+                    &copy; Copyright 2018
+				</div> 
+            </div>
+		</section>
+		<div class="modal fade hide" id="productModal">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title">New Product</h1>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form id="productForm">
+							<div class="form-row">
+								<div class="form-group col-md-6">
+									<label for="formProductName">Name</label> 
+									<input type="text"class="form-control" id="formProductName" placeholder="Product Name" required="required" maxlength="50" autofocus>
+									<input type="hidden" id="hiddenProductRowId" value="0">
+									<div class="invalid-feedback">No, you missed product name.</div>
+								</div>
+								<div class="form-group col-md-3">
+									<label for="inputProductCode">Code</label> 
+									<input type="text"class="form-control" id="inputCode" placeholder="Product Code" required="required" maxlength="10">
+									<div class="invalid-feedback">No, you missed product code.</div>
+								</div>
+								<div class="form-group col-md-3">
+									<label for="inputProductValue">Value</label> 
+									<input type="number"class="form-control" id="inputProductValue" placeholder="Product Value" required="required">
+									<div class="invalid-feedback">No, you missed product value.</div>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-md-12">
+									<label for="inputProductDesc">Code</label> 
+									<input type="text"class="form-control" id="inputProductDesc" placeholder="Product Description">
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="form-group col-md-6">
+									<label for="inputProductMeasurement">Measurement</label> 
+									<input type="text" class="form-control" id="inputProductMeasurement" placeholder="KG" maxlength="5">
+								</div>
+								<div class="form-group col-md-6">
+									<label for="inputProductType">Type</label> 
+									<input type="text" class="form-control" id="inputProductType" placeholder="Beverages" maxlength="25">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="form-check">
+									<input class="form-check-input" type="checkbox" id="isProductActive" checked="checked">
+									<label class="form-check-label" for="isProductActive">Active</label>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-primary" id="btnProductSave">Save</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="assets/js/main.js"></script>
+	<script src="assets/js/products.js"></script>	
+</html>
