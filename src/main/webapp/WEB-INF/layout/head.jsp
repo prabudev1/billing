@@ -18,6 +18,8 @@
 
 <link rel="Stylesheet" href="assets/css/bootstrap.v4.1.3.css" />
 <link rel="stylesheet" href="assets/css/styles.css" />
+<link rel="stylesheet" href="assets/css/styles.m.css" />
+
 <link rel="stylesheet" href="assets/css/daterangepicker.css" />
 
 <script src="assets/js/jquery-3.3.1.min.js"></script>

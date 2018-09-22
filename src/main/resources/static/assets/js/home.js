@@ -22,7 +22,8 @@ $( document ).ready(function() {
 			$("#productCount").html(roundOf2Digit(data.totProducts));
 			
 			var dateMap = [];
-				
+			var productDateMap = [];
+			var prodItem ;
             for (i = 0; i < data.billingItems.length; i++) {
                 billRec = data.billingItems[i];
                 var totalValue = roundOf2Digit(billRec.total);
@@ -40,6 +41,23 @@ $( document ).ready(function() {
             			newvalue = totalValue;
             		}
             		setMapProperty(dateMap, dateString, newvalue);
+            		
+            		/* Iterate product to find the count */
+            		for (cntPrd = 0; cntPrd < billRec.billingItems.length; cntPrd++) {
+            			prodItem = billRec.billingItems[cntPrd];
+            			var lProductName = prodItem.product.code;
+            			var lValue = prodItem.value;
+            			
+            			var prdExistingvalue = getMapProperty(productDateMap, lProductName, lValue);
+                		var prdNewValue = 0;
+                		if (prdExistingvalue != null && prdExistingvalue != undefined && prdExistingvalue != "") {
+                			prdNewValue = (+prdExistingvalue) + (+lValue);
+                		} else {
+                			prdNewValue = lValue;
+                		}
+                		setMapProperty(productDateMap, lProductName, prdNewValue);
+            		}
+            		
             	}
             	var custName = "NA";
             	if (billRec.customer != null) {
@@ -76,6 +94,44 @@ $( document ).ready(function() {
 	    		  	}
 	    		}
 	    	});
+            
+            var prdLabelArray = Object.keys(productDateMap).reverse();
+            var prdDataArray = Object.values(productDateMap).reverse();
+            
+            var myDoughnutChart = new Chart(document.getElementById("doughnut-chart"), {
+                type: 'doughnut',
+                data: {
+                	    datasets: [{ 
+                	    	data: prdDataArray,
+                    	    backgroundColor: [
+                    	    	'rgb(255, 99, 132)',
+                    	    	'rgb(255, 159, 64)',
+                    	    	'rgb(255, 205, 86)',
+                    	    	'rgb(75, 192, 192)',
+                    	    	'rgb(54, 162, 235)',
+                    	    	'rgb(153, 102, 255)',
+                    	    	'rgb(201, 203, 207)',
+                                '#e53935',
+                                '#8e24aa',
+                                '#d81b60',
+                                '#1e88e5',
+                                '#5e35b1',
+                                '#00897b',
+                                '#3949ab',
+                                '#039be5',
+                                '#c0ca33',
+                                '#fb8c00',
+                                '#43a047',
+                                '#ff5722',
+                                '#424242',
+                                '#ffb300',
+                                '#6d4c41',
+                                '#546e7a'
+                            ]
+                	    }],
+                	    labels: prdLabelArray
+                }
+            });
             
 		},
 		error: function(jqXHR, textStatus, errorThrown) {

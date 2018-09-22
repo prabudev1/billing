@@ -162,30 +162,31 @@ $(document).ready(function() {
                     .append($("<td>").addClass("jsgrid-cell text-right").text(roundOf2Digit(billRec.value))));
                 }
     			    			
-    			var $info = $("<div>").addClass("list-info")
+    			var $info = $("<div>").addClass("list-info list-bill-info")
             	
-                .append($("<div>").addClass("row")
-        		.append($("<div>").addClass("col-3")
+                .append($("<div>").addClass("form-row")
+        		.append($("<div>").addClass("col-md-2")
 				.append($("<p>").addClass("list-bill-heading").text("Bill No:"))
         		.append($("<p>").html(item.id))
         		.append($("<p>").addClass("list-bill-heading").text("Invoice Date:"))
         		.append($("<p>").html(dateStr)))
 
-            	.append($("<div>").addClass("col-3")
+            	.append($("<div>").addClass("col-md-3")
         		.append($("<p>").addClass("list-bill-heading").text("Buyer Info:"))
         		.append($("<p>").html(getCustInfo(item.customer))))
             	
-                .append($("<div>").addClass("col-6")
+                .append($("<div>").addClass("col-md-7")
+                .append($("<p>").addClass("list-bill-heading").text("Product Items:"))
                 .append($("<table>").append($billHeaderColumns).append($billPproductList))))
                 
-                .append($("<div>").addClass("row")
-        		.append($("<div>").addClass("col-3")
+                .append($("<div>").addClass("form-row")
+        		.append($("<div>").addClass("col-md-2 desktop-print")
 				.append($("<div>").addClass("report-icon report-icon-print").append($("<span>").addClass("fa fa-print")).attr("binding-id", item.id)))
 
-            	.append($("<div>").addClass("col-3")
+            	.append($("<div>").addClass("col-md-3")
         		.append($("<p>").addClass("list-bill-heading").text("")))
             	
-                .append($("<div>").addClass("col-6")
+                .append($("<div>").addClass("col-md-7 lb-sub-container")
                 .append($("<span>").addClass("lb-sub-hd").html("Sub Total:"))
                 .append($("<span>").addClass("lb-sub-hd-val").text(item.totValue))
                 
@@ -197,6 +198,11 @@ $(document).ready(function() {
                 
                 .append($("<span>").addClass("lb-sub-hd").html("Grand Total (₹): "))
                 .append($("<span>").addClass("lb-sub-hd-val").text(item.total))))
+                
+                .append($("<div>").addClass("form-row mobile-print")
+        		.append($("<div>").addClass("col-md-2")
+				.append($("<div>").addClass("report-icon report-icon-print").append($("<span>").addClass("fa fa-print")).attr("binding-id", item.id))))
+
                 
             return $("<tr>").append($("<td>").append($info));
     		}

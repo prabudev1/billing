@@ -34,6 +34,12 @@ public class WebController {
 		}
 	}
 	
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String showIndexPage(ModelMap model) {
+		model.addAttribute(ApplicationConstants.APPLICATION_PROPS_KEY, propJson);
+		return "home";
+	}
+	
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String showHomePage(ModelMap model) {
 		model.addAttribute(ApplicationConstants.APPLICATION_PROPS_KEY, propJson);

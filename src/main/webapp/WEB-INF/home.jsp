@@ -16,44 +16,58 @@
 					
 				</jsp:include>
 				
-				<section class="sec-body">
+				<section class="sec-body-plain">
 					<div class="container">
 						<div class="row">
-							<div class="col-8">
+							<div class="col-12">
+								<div class="card-deck card-numbers">
+									<div class="card mb-3 mt-3">
+										<div class="card-body">
+											<p class="hm-card-count-title">Revenue</p>
+											<p class="hm-card-count-value">Rs. &nbsp;<span id="revenue"></span></p>
+										</div>
+									</div>
+									<div class="card mb-3 mt-3">
+										<div class="card-body">
+											<p class="hm-card-count-title">Customer</p>
+											<p class="hm-card-count-value"><span id="custCount"></span></p>
+										</div>
+									</div>
+									<div class="card mb-3 mt-3">
+										<div class="card-body">
+											<p class="hm-card-count-title">Invoice</p>
+											<p class="hm-card-count-value"><span id="invoiceCount"></span></p>
+										</div>
+									</div>
+									<div class="card mb-3 mt-3">
+										<div class="card-body">
+											<p class="hm-card-count-title">Product</p>
+											<p class="hm-card-count-value"><span id="productCount"></span></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-6 col-chart" >
 								<div class="card bg-light mb-3">
-									<div class="card-header bg-info text-white ">Trending (Recent <span class="spanReportDays"></span> days)</div>
 									<div class="card-body">
+										<div class="card-header">
+											Billing Trending 
+											<p class="text-muted">Recent <span class="spanReportDays"></span> days</p>
+										</div>
 										<canvas id="line-chart" width="400" height="200"></canvas>	
 									</div>
 								</div>
 							</div>
-							<div class="col-4">
-								<div class="card-deck">
-									<div class="card bg-light mb-3">
-										<div class="card-header bg-info text-white ">Revenue (Rs.)</div>
-										<div class="card-body">
-											<h5 class="card-title"><span id="revenue"></span></h5>
+							<div class="col-6 col-chart">
+								<div class="card bg-light mb-3">
+									<div class="card-body">
+										<div class="card-header">
+											Product Trending 
+											<p class="text-muted">Recent <span class="spanReportDays"></span> days</p>
 										</div>
-									</div>
-									<div class="card bg-light mb-3">
-										<div class="card-header bg-info text-white ">Customer(s)</div>
-										<div class="card-body">
-											<h5 class="card-title"><span id="custCount"></span></h5>
-										</div>
-									</div>
-								</div>
-								<div class="card-deck">
-									<div class="card bg-light mb-3" >
-										<div class="card-header bg-info text-white ">Invoice</div>
-										<div class="card-body">
-											<h5 class="card-title"><span id="invoiceCount"></span></h5>
-										</div>
-									</div>
-									<div class="card bg-light mb-3" >
-										<div class="card-header bg-info text-white ">Product(s)</div>
-										<div class="card-body">
-											<h5 class="card-title"><span id="productCount"></span></h5>
-										</div>
+										<canvas id="doughnut-chart" width="400" height="200"></canvas>	
 									</div>
 								</div>
 							</div>
@@ -62,8 +76,11 @@
 						<div class="row">
 							<div class="col-12">
 								<div class="card bg-light mb-3">
-									<div class="card-header bg-info text-white ">Invoice Info (Recent <span class="spanReportDays"></span> days)</div>
 									<div class="card-body table-responsive">
+										<div class="card-header">
+											Invoice List 
+											<p class="text-muted">Recent <span class="spanReportDays"></span> days</p>
+										</div>
 										<table class="table table-bordered">
 											<thead>
 												<tr class="table-active">

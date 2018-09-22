@@ -22,7 +22,7 @@ $( document ).ready(function() {
 		url: '/billing/get/' + billId,
 		contentType: "application/json; charset=utf-8",
         dataType   : "json",
-		async : false,
+		async : true,
 		beforeSend: function() {
 			$("#pageLoadingContainer").show();
 		},

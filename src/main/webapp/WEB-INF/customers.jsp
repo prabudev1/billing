@@ -20,25 +20,25 @@
 						<button type="button" class="close" data-dismiss="alert">x</button>
 						<strong>Success! </strong> Customer have added successfully.
 					</div>
-					<div class="container">
+					<div class="container billing-container">
 						<div class="row ">
-							<div class="col-4">
-								<h3>Search & Filter Info</h3>
+							<div class="col-3">
+								<h3>Search & Filter</h3>
 							</div>
-							<div class="col-6 text-right">
+							<div class="col-9 text-right">
 								<button type="button" class="btn btn-primary add-new-customer" >Add New Customer</button>
 								<button type="button" class="btn btn-secondary reload-customers" >Reload</button>
 							</div>
 						</div>
 						<div class="row mt-3">
-							<div class="col-7 ">
+							<div class="col-6 ">
 								<div class="form-group" >
 									<label for="custNameMobile" class="cust-label">Name or Mobile</label> 
-									<input type="text" id="custNameMobile" class="form-control col-sm-5" placeholder="Name or Mobile">
+									<input type="text" id="custNameMobile" class="form-control col-sm-8" placeholder="Name or Mobile">
 								</div>
 							</div>
-							<div class="col-3 text-right">
-								<div class="form-group" >
+							<div class="col-6 text-right">
+								<div class="form-group col-sm-8 pull-right" >
 									<label for="custOrderBy" class="cust-label">Order By</label>
 									<select id="custOrderBy" class="form-control">
 										<option value="6" selected="selected">Recently Added First</option>
@@ -52,7 +52,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-10">
+							<div class="col-12">
 								<div id="cust-managment-grid" class="jsgrid"></div>
 							</div>
 						</div>

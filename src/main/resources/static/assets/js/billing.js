@@ -233,9 +233,8 @@ $(document).ready(function() {
 	
 	function getSingleBillRow(rowObj) {
 		var rowText = "<tr id='billRowItem" + rowObj.sno + "'>";
-		var noOfRecords = $("#billItems tr").length ;
+		var noOfRecords = $("#billItems tr").length ;		
 		rowText += "<td class='tbl-bill-sno'><span class='clsSno' id='spanSno" + rowObj.sno + "'>" + ((+noOfRecords) + 1) + "</span></td>";
-		rowText += "<td class='tbl-bill-action'><a tabindex='-1' href='javascript:void(0)' id='linkRemove" + rowObj.sno + "'><span class='fa fa-remove remove-icon'></span></a></td>";
 		rowText += "<td class='tbl-bill-prd dropdown'>" +
 						"<input type='text' class='clsProductName bill-form-control form-control' " +
 							" id='inProductName" + rowObj.sno + "' " +
@@ -250,6 +249,7 @@ $(document).ready(function() {
 									" value='" + rowObj.qty + "'>" +
 					"<div class='invalid-feedback'>Missed Qty.</div></td>";
 		rowText += "<td class='tbl-bill-price'> <span id='spanPrice" + rowObj.sno + "'>" + rowObj.price + "</span><input type='hidden' class='clsPrice' id='inPrice" + rowObj.sno + "' value='" + rowObj.price + "'></td>";
+		rowText += "<td class='tbl-bill-action'><a tabindex='-1' href='javascript:void(0)' id='linkRemove" + rowObj.sno + "'><span class='fa fa-remove remove-icon'></span></a></td>";
 		return rowText;
 	}
 	

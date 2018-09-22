@@ -75,6 +75,12 @@ a, a:active, a:hover {
 	border-radius: 25px;
 }
 
+.sec-body-plain {
+	padding: 10px;
+	font-size: 14px;
+	border-radius: 25px;
+}
+
 .home {
 	background: #f2f2f2;
 }
@@ -211,8 +217,6 @@ a, a:active, a:hover {
 	color: #f4511e;
 	font-size: 32px;
 	padding-top: 7px;
-	width: 60px;
-    height: 60px;
 }
 .btn-primary:hover {
   background-color: #38c2ad;
@@ -520,12 +524,41 @@ a, a:active, a:hover {
     font-weight: bold;
 }
 
+.card {
+	border: 0;
+    border-radius: 12px;
+    background-color: #fafafa;
+    -webkit-box-shadow: 2px 0px 15px 8px rgba(227,227,227,1);
+	-moz-box-shadow: 2px 0px 15px 8px rgba(227,227,227,1);
+	box-shadow: 2px 0px 15px 8px rgba(227,227,227,1);
+}
+.card-header {
+	padding: 0;
+    color: #6c757d;
+    font-size: 200%;
+    background-color: inherit;
+    border-bottom: none;
+}
+.card-numbers .card-body {
+	text-align: right;
+	padding: 16px 10px 0 1px;
+}
+.hm-card-count-title {
+	color: #9a9a9a;
+}
+.hm-card-count-value, .hm-card-count-value span {
+	font-size: 110%;
+	font-weight: bold;
+}
+
 .card-title span {
 	font-weight: bold;
     font-size: 110%;
     color: #212121;
 }
-
+.col-chart, .col-custom {
+	min-width: 350px;
+}
 .card img {
 	height: 110px;
     width: 120px;
@@ -707,6 +740,9 @@ span {
 .list-bill-cgst {
 	/* padding-left: 58px; */
 }
+.lb-sub-container {
+	padding-top: 20px;
+}
 .lb-sub-hd {
 	color: #616161 !important;
 }
@@ -715,7 +751,7 @@ span {
 	font-weight: normal!important;
 	padding-left: 5px;
 	padding-right: 10px;
-	padding-top: 20px;
+	
 }
 .report-icon-container {
 	padding-top: 20px;
@@ -725,6 +761,9 @@ span {
 	font-size: 18px;
 	padding-top: 26px;
 	padding-right: 37px;
+}
+.report-icon-top {
+	padding-top: 0px !important;
 }
 .report-icon span {
 	padding-left: 10px;
@@ -736,4 +775,15 @@ span {
 }
 .report-icon-print span {
 	color: #616161 !important;
+}
+#cust-address {
+	padding-right: 10px
+}
+.billing-container {
+	max-width: 750px;
+	margin-left: 0px;
+}
+.tbl-bill-action {
+	
+	padding-left: 3px !important;
 }

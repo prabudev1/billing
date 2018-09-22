@@ -1,0 +1,58 @@
+#topbar, .mobile-print {
+  	display: none;
+}
+.desktop-print {
+	display: block;
+}
+@media (max-width: 420px) {
+	#content {
+		padding: 0;
+	}
+  	.wrapper, .mobile-print {
+  		display: block;
+  	}
+  	.desktop-print {
+		display: none;
+	}
+  	#sidebar, .user-icon {
+  		display: none;
+  	}
+  	#topbar {
+  		display: flex;
+  		box-shadow: none;
+  		margin-bottom: 0;
+  		padding: 0 0 0 10px;
+  	}
+  	.bg-menu {
+    	background-color: #26a69a !important;
+	}
+	.m-user-icon {
+		text-align: right;
+		color: #fafafa;
+		font-size: 24px;
+		padding-top: 10px;
+		padding-right: 10px;
+	}
+	.nav-link span {
+		padding-right: 5px;
+	}
+	.my-alert {
+		left: 15px;
+	}
+	.report-icon {
+		padding-right: 0;
+	}
+	#cust-managment-grid {
+		margin-top: 15px;
+	}
+	.custom-navbar-toggler {
+    	background-color: #f5f5f5;
+    	border: 1px solid transparent;
+	}
+	.list-bill-info p {
+		padding-bottom: 10px;
+	}
+	.list-bill-heading {
+		padding-bottom: 2px !important;
+	}
+}

@@ -20,25 +20,25 @@
 						<button type="button" class="close" data-dismiss="alert">x</button>
 						<strong>Success! </strong> Product have added successfully.
 					</div>
-					<div class="container">
+					<div class="container billing-container" >
 						<div class="row ">
 							<div class="col-4">
 								<h3>Search & Filter Info</h3>
 							</div>
-							<div class="col-6 text-right">
+							<div class="col-8 text-right">
 								<button type="button" class="btn btn-primary add-new-product" >Add New Product</button>
 								<button type="button" class="btn btn-secondary reload-products" >Reload</button>
 							</div>
 						</div>
 						<div class="row mt-3">
-							<div class="col-7 ">
+							<div class="col-6 ">
 								<div class="form-group" >
 									<label for="prdNameMobile" class="prd-label">Name or Code</label> 
-									<input type="text" id="prdNameMobile" class="form-control col-sm-5" placeholder="Name or Code">
+									<input type="text" id="prdNameMobile" class="form-control col-sm-8" placeholder="Name or Code">
 								</div>
 							</div>
-							<div class="col-3 text-right">
-								<div class="form-group" >
+							<div class="col-6 text-right">
+								<div class="form-group col-sm-8 pull-right" >
 									<label for="prdOrderBy" class="prd-label">Order By</label>
 									<select id="prdOrderBy" class="form-control">
 										<option value="8" selected="selected">Recently Added First</option>
@@ -57,7 +57,7 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-10">
+							<div class="col-12">
 								<div id="prd-managment-grid" class="jsgrid"></div>
 							</div>
 						</div>

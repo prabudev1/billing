@@ -17,24 +17,33 @@
 				<section class="sec-body">
 					<div class="container">
 						<div class="row ">
-							<div class="col-4">
+							<div class="col-7">
 								<h3>Search & Filter Info</h3>
 							</div>
-							
+							<div class="col-5">
+								<div class="pull-right report-icon report-icon-top">
+									<span class="fa fa-file-excel-o" id="rpt-excel"></span>
+									<span class="fa fa-refresh" id="rpt-reload"></span>
+									<span class="fa fa-bars" id="rpt-reload" data-toggle="collapse" data-target="#reportFilterMenu"
+									aria-controls="reportFilterMenu" aria-expanded="true"
+									aria-label="Toggle navigation"></span>
+								</div>
+							</div>
 						</div>
-						<div class="row mt-3">
-							<div class="col-4 ">
+						<div class="form-row mt-3 collapse show" id="reportFilterMenu">
+							<div class="col-md-4 ">
 								<div class="form-group" >
 									<label for="custNameMobile" class="cust-label">Bill Date Range</label> 
 									<div id="from-to-date-picker" class="form-control">
                                     	<img src="assets/img/calendar.png" class="icon-img"/>
                                     	<span></span> <i class="fa fa-caret-down"></i>
+                                    	
                                 	</div>
                                 	<input type="hidden" class="form-control" id="hidden-date-from" name="hidden-date-from">
                                 	<input type="hidden" class="form-control" id="hidden-date-to" name="hidden-date-to">
 								</div>
 							</div>
-							<div class="col-2">
+							<div class="col-md-3">
 								<div class="form-group" >
 									<label for="listView" class="cust-label">View</label>
 									<select id="listView" class="form-control">
@@ -43,7 +52,7 @@
 									</select>
 								</div>
 							</div>
-							<div class="col-3">
+							<div class="col-md-3">
 								<div class="form-group" >
 									<label for="billOrderBy" class="cust-label">Order By</label>
 									<select id="billOrderBy" class="form-control">
@@ -52,12 +61,6 @@
 										<option value="5">Ascending By Grand Total</option>
 										<option value="6">Descending By Grand Total</option>
 									</select>
-								</div>
-							</div>
-							<div class="col-3 text-right" >
-								<div class="report-icon pull-right">
-									<span class="fa fa-file-excel-o" id="rpt-excel"></span>
-									<span class="fa fa-refresh" id="rpt-reload"></span>
 								</div>
 							</div>
 						</div>
