@@ -329,3 +329,17 @@
             on billingite0_.product_id=product1_.id 
     where
         billingite0_.billing_id=?
+2018-10-01 23:01:55.095  INFO 3796 --- [Thread-6] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1fc3b3cf: startup date [Mon Oct 01 22:58:56 IST 2018]; root of context hierarchy
+2018-10-01 23:01:55.099  INFO 3796 --- [Thread-6] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2018-10-01 23:01:55.101  INFO 3796 --- [Thread-6] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2018-10-01 23:01:55.102  INFO 3796 --- [Thread-6] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-10-01 23:01:55.103  INFO 3796 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2018-10-01 23:01:55.117  INFO 3796 --- [Thread-6] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2018-10-01 23:01:55.822 ERROR 3796 --- [restartedMain] o.s.b.c.l.LoggingApplicationListener     : Cannot set level: TRACE  for 'org.hibernate.type.descriptor.sql.BasicBinder'
+2018-10-01 23:01:55.830  INFO 3796 --- [restartedMain] c.g.b.SpringBootWebServicesApplication   : Starting SpringBootWebServicesApplication on CDC2-L-33BW4H2 with PID 3796 (started by prabu.devarajan in C:\Prabu Devarajan\OneDrive - Accenture\1. Fun\eclipse-oxygen-workspace\billing)
+2018-10-01 23:01:55.830  INFO 3796 --- [restartedMain] c.g.b.SpringBootWebServicesApplication   : No active profile set, falling back to default profiles: default
+2018-10-01 23:01:55.834  INFO 3796 --- [restartedMain] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@5c9e0f35: startup date [Mon Oct 01 23:01:55 IST 2018]; root of context hierarchy
+2018-10-01 23:01:57.562  INFO 3796 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$82a031f0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-10-01 23:01:58.264  INFO 3796 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9097 (http)
+2018-10-01 23:01:58.265  INFO 3796 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-10-01 23:01:58.266  INFO 3796 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.32
