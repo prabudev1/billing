@@ -5,9 +5,9 @@ import java.util.List;
 import com.gpware.billing.model.Customer;
 
 public interface ICustomerDAO {
-	List<Customer> getAllCustomers(String searchVal, String orderBY);
+	List<Customer> getAllCustomers(String userIdentifier, String searchVal, String orderBY);
 
-	List<Customer> getCustomersByNameOrMobile(String serch);
+	List<Customer> getCustomersByNameOrMobile(String userIdentifier, String serch);
 
 	Customer getCustomerById(int customerId);
 
@@ -17,6 +17,6 @@ public interface ICustomerDAO {
 
 	void deleteCustomer(int customerId);
 
-	boolean customerExists(String newMobileNo, String prevMobileNo);
+	boolean customerExists(String userIdentifier, String newMobileNo, String prevMobileNo);
 
 }

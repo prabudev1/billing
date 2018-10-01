@@ -6,59 +6,59 @@ import org.springframework.stereotype.Component;
 @Component
 public class ApplicationProperties {
 
-	@Value("${app.config.gst.percent.state}")
-	private String gstStatePercent;
+	@Value("${app.config.user.admin.name}")
+	private String adminUserName;
 
-	@Value("${app.config.gst.percent.central}")
-	private String gstCentralPercent;
+	@Value("${app.config.user.admin.pwd}")
+	private String adminUserPwd;
 
-	@Value("${app.config.report.days}")
-	private Integer reportDays;
+	@Value("${app.config.user.names}")
+	private String userNames;
 
-	@Value("${app.config.serviceurl.host}")
-	private String svcUrl;
+	@Value("${app.config.user.delimiter}")
+	private String userPwdDelimiter;
 
-	@Value("${app.config.billNo.leadingzeros}")
-	private String billNoLeadingZero;
+	@Value("${app.config.user.props.file.path}")
+	private String userPropsFilePath;
 
-	public String getGstStatePercent() {
-		return gstStatePercent;
+	public String getAdminUserName() {
+		return adminUserName;
 	}
 
-	public void setGstStatePercent(String gstStatePercent) {
-		this.gstStatePercent = gstStatePercent;
+	public void setAdminUserName(String adminUserName) {
+		this.adminUserName = adminUserName;
 	}
 
-	public String getGstCentralPercent() {
-		return gstCentralPercent;
+	public String getAdminUserPwd() {
+		return adminUserPwd;
 	}
 
-	public void setGstCentralPercent(String gstCentralPercent) {
-		this.gstCentralPercent = gstCentralPercent;
+	public void setAdminUserPwd(String adminUserPwd) {
+		this.adminUserPwd = adminUserPwd;
 	}
 
-	public Integer getReportDays() {
-		return reportDays;
+	public String getUserNames() {
+		return userNames;
 	}
 
-	public void setReportDays(Integer reportDays) {
-		this.reportDays = reportDays;
+	public void setUserNames(String userNames) {
+		this.userNames = userNames;
 	}
 
-	public String getSvcUrl() {
-		return svcUrl;
+	public String getUserPwdDelimiter() {
+		return userPwdDelimiter;
 	}
 
-	public void setSvcUrl(String svcUrl) {
-		this.svcUrl = svcUrl;
+	public void setUserPwdDelimiter(String userPwdDelimiter) {
+		this.userPwdDelimiter = userPwdDelimiter;
 	}
 
-	public String getBillNoLeadingZero() {
-		return billNoLeadingZero;
+	public String getUserPropsFilePath() {
+		return userPropsFilePath;
 	}
 
-	public void setBillNoLeadingZero(String billNoLeadingZero) {
-		this.billNoLeadingZero = billNoLeadingZero;
+	public void setUserPropsFilePath(String userPropsFilePath) {
+		this.userPropsFilePath = userPropsFilePath;
 	}
 
 }

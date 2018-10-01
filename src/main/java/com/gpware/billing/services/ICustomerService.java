@@ -6,15 +6,15 @@ import com.gpware.billing.model.Customer;
 
 public interface ICustomerService {
 	
-	List<Customer> getAllCustomers(String searchVal, String orderBY);
+	List<Customer> getAllCustomers(String userIdentifier, String searchVal, String orderBY);
 
-	List<Customer> getCustomersByNameOrMobile(String serch);
+	List<Customer> getCustomersByNameOrMobile(String userIdentifier, String serch);
 	
 	Customer getCustomerById(int customerId);
 
-	boolean addCustomer(Customer customer);
+	boolean addCustomer(String userIdentifier, Customer customer);
 
-	boolean updateCustomer(Customer customer);
+	boolean updateCustomer(String userIdentifier, Customer customer);
 
 	void deleteCustomer(int customerId);
 

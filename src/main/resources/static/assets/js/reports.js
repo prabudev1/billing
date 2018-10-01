@@ -122,7 +122,7 @@ $(document).ready(function() {
         			displayName = (item.customer.name + " (" + item.customer.mobile +")");
         		}
 	        	var $info = $("<tr>")
-	            	.append($("<td>").addClass("jsgrid-cell text-center").text(item.id))
+	            	.append($("<td>").addClass("jsgrid-cell text-center").text(item.billNum))
 	            	.append($("<td>").addClass("jsgrid-cell text-left").text(displayName))
 	            	.append($("<td>").addClass("jsgrid-cell text-right").text(item.totItems))
 	            	.append($("<td>").addClass("jsgrid-cell text-right").text(item.totValue))
@@ -167,7 +167,7 @@ $(document).ready(function() {
                 .append($("<div>").addClass("form-row")
         		.append($("<div>").addClass("col-md-2")
 				.append($("<p>").addClass("list-bill-heading").text("Bill No:"))
-        		.append($("<p>").html(item.id))
+        		.append($("<p>").html(paddingBillingNo(item.billNum)))
         		.append($("<p>").addClass("list-bill-heading").text("Invoice Date:"))
         		.append($("<p>").html(dateStr)))
 
@@ -324,6 +324,14 @@ $(document).ready(function() {
 		}
 		return custInfo;
 	}
-	
+	function paddingBillingNo(paraBillNo) {
+		var strBillNo = "" + paraBillNo;
+		var paddLength = ((+APP_PROPS_JSON.BILL_NO_LEADING_ZERO_LENGTH) - strBillNo.length);
+		
+		for (cntI=0; cntI < paddLength; cntI++){
+			strBillNo = "0" + strBillNo;
+		}
+	    return strBillNo;
+	}
 	$("#pageLoadingContainer").hide();
 });

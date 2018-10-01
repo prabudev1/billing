@@ -27,7 +27,7 @@ $( document ).ready(function() {
 			$("#pageLoadingContainer").show();
 		},
 		success: function(data) {
-			$("#billNumber").html(paddingBillingNo(data.id));
+			$("#billNumber").html(paddingBillingNo(data.billNum));
 			
 			var dateValue = moment(data.createdOn)
 			//var dateStr = dateValue.format("DD-MMM-YYYY HH:mm:ss");

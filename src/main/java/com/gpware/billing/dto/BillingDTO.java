@@ -8,6 +8,7 @@ import java.util.Set;
 public class BillingDTO implements Serializable {
 	private static final long serialVersionUID = 2530083827640916387L;
 	private int id;
+	private Integer billNum;
 	private CustomerDTO customer;
 	private BigDecimal totItems;
 	private BigDecimal totValue;
@@ -19,6 +20,7 @@ public class BillingDTO implements Serializable {
 	private BigDecimal total;
 	private String sts;
 	private String notes;
+	private Timestamp billingDate;
 	private String createdBy;
 	private Timestamp createdOn;
 
@@ -146,6 +148,22 @@ public class BillingDTO implements Serializable {
 
 	public void setBillingItems(Set<BillingDetailsDTO> billingItems) {
 		this.billingItems = billingItems;
+	}
+
+	public Integer getBillNum() {
+		return billNum;
+	}
+
+	public void setBillNum(Integer billNum) {
+		this.billNum = billNum;
+	}
+
+	public Timestamp getBillingDate() {
+		return billingDate;
+	}
+
+	public void setBillingDate(Timestamp billingDate) {
+		this.billingDate = billingDate;
 	}
 
 }

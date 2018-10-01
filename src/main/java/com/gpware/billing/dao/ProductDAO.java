@@ -23,13 +23,13 @@ public class ProductDAO implements IProductDAO {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Product> getAllProducts(String serchVal, String orderBy) {
+	public List<Product> getAllProducts(String userIdentifier, String serchVal, String orderBy) {
 		if (serchVal != null && !serchVal.equals("")) {
 			serchVal = "%" + serchVal + "%";
 		} else {
 			serchVal = "%";
 		}
-		String hql = "FROM Product as prd where prd.name like ? or prd.code like ? ";
+		String hql = "FROM Product as prd where prd.createdBy = ? and (prd.name like ? or prd.code like ? )";
 		if (orderBy != null) {
 			if (orderBy.equalsIgnoreCase("1")) {
 				hql += " order by prd.name asc ";
@@ -49,15 +49,21 @@ public class ProductDAO implements IProductDAO {
 				hql += " order by prd.createdOn desc ";
 			}
 		}
-		return (List<Product>) entityManager.createQuery(hql).setParameter(0, serchVal).setParameter(1, serchVal).getResultList();
+		return (List<Product>) entityManager.createQuery(hql)
+				.setParameter(0, userIdentifier)
+				.setParameter(1, serchVal)
+				.setParameter(2, serchVal).getResultList();
 	}
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Product> getProductsByNameOrCode(String serchVal) {
+	public List<Product> getProductsByNameOrCode(String userIdentifier, String serchVal) {
 		serchVal = "%" + serchVal + "%";
-		String hql = "FROM Product as prd where prd.name like ? or prd.code like ?";
-		return (List<Product>) entityManager.createQuery(hql).setParameter(0, serchVal).setParameter(1, serchVal).getResultList();
+		String hql = "FROM Product as prd where prd.createdBy = ? and (prd.name like ? or prd.code like ?)";
+		return (List<Product>) entityManager.createQuery(hql)
+				.setParameter(0, userIdentifier)
+				.setParameter(1, serchVal)
+				.setParameter(2, serchVal).getResultList();
 	}
 	
 	@Override
@@ -76,9 +82,12 @@ public class ProductDAO implements IProductDAO {
 	}
 	
 	@Override
-	public boolean productExists(String newCode, String prevCode) {
-		String hql = "FROM Product as prd WHERE prd.code = ? and prd.code <> ?";
-		int count = entityManager.createQuery(hql).setParameter(0, newCode).setParameter(1, prevCode).getResultList().size();
+	public boolean productExists(String userIdentifier, String newCode, String prevCode) {
+		String hql = "FROM Product as prd WHERE prd.createdBy = ? and (prd.code = ? and prd.code <> ?)";
+		int count = entityManager.createQuery(hql)
+				.setParameter(0, userIdentifier)
+				.setParameter(1, newCode)
+				.setParameter(2, prevCode).getResultList().size();
 		return count > 0 ? true : false;
 	}
 

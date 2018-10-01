@@ -28,9 +28,6 @@ public class BillingService implements IBillingService {
 	@Autowired
 	private IBillingDAO billingDAO;
 	
-	@Autowired
-	private ApplicationProperties appProp;
-	
 	private BillingHelper billingHelper = new BillingHelper();
 
 	@Override
@@ -40,8 +37,8 @@ public class BillingService implements IBillingService {
 	}
 
 	@Override
-	public List<Billing> getBillingList(String fromDate, String toDate, String orderBY) {
-		return billingDAO.getBillingList(fromDate, toDate, orderBY);
+	public List<Billing> getBillingList(String userIdentifier, String fromDate, String toDate, String orderBY) {
+		return billingDAO.getBillingList(userIdentifier, fromDate, toDate, orderBY);
 	}
 
 	@Override
@@ -55,17 +52,17 @@ public class BillingService implements IBillingService {
 	}
 
 	@Override
-	public BillingReportDTO getReportData() {
-		BillingReportDTO billReport = billingDAO.getBillReportCOunt();
-		List<Billing> billingList = billingDAO.getAllBillings(appProp.getReportDays());
+	public BillingReportDTO getReportData(String userIdentifier, Integer reportDays) {
+		BillingReportDTO billReport = billingDAO.getBillReportCOunt(userIdentifier);
+		List<Billing> billingList = billingDAO.getAllBillings(userIdentifier, reportDays);
 		List<BillingDTO> billingDtoList = billingHelper.copyBillingList(billingList);
 		billReport.setBillingItems(billingDtoList);
 		return billReport;
 	}
 	
 	@Override
-	public byte[] downloadExcel(String fromDate, String toDate, String orderBy) throws IOException {
-		List<Billing> billingList = getBillingList(fromDate, toDate, orderBy);
+	public byte[] downloadExcel(String userIdentifier, String fromDate, String toDate, String orderBy) throws IOException {
+		List<Billing> billingList = getBillingList(userIdentifier, fromDate, toDate, orderBy);
 
 		XSSFWorkbook workbook = new XSSFWorkbook();
         XSSFSheet sheet = workbook.createSheet("Invoice Data");

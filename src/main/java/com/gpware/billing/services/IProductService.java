@@ -6,15 +6,15 @@ import com.gpware.billing.model.Product;
 
 public interface IProductService {
 
-	List<Product> getAllProducts(String serchVal, String orderBy);
+	List<Product> getAllProducts(String userIdentifier, String serchVal, String orderBy);
 
-	List<Product> getProductsByNameOrCode(String serch);
+	List<Product> getProductsByNameOrCode(String userIdentifier, String serch);
 
 	Product getProductById(int productId);
 
-	boolean addProduct(Product product);
+	boolean addProduct(String userIdentifier, Product product);
 
-	boolean updateProduct(Product product);
+	boolean updateProduct(String userIdentifier, Product product);
 
 	void deleteProduct(int productId);
 

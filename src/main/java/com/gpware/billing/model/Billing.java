@@ -25,6 +25,9 @@ public class Billing implements Serializable {
 	@Column(name = "ID")
 	private int id;
 
+	@Column(name = "BILL_ID")
+	private Integer billNum;
+
 	@OneToOne
 	@JoinColumn(name = "CUSTOMER_ID")
 	private Customer customer;
@@ -59,10 +62,13 @@ public class Billing implements Serializable {
 	@Column(name = "NOTES")
 	private String notes;
 
+	@Column(name = "BILLING_DATE")
+	private Timestamp billingDate;
+
 	@Column(name = "CREATEDBY")
 	private String createdBy;
 
-	@Column(name = "CREATEDON", insertable= false, updatable = false)
+	@Column(name = "CREATEDON", insertable = false, updatable = false)
 	private Timestamp createdOn;
 
 	@OneToMany(mappedBy = "billing", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -186,6 +192,22 @@ public class Billing implements Serializable {
 
 	public void setBillingItems(Set<BillingDetails> billingItems) {
 		this.billingItems = billingItems;
+	}
+
+	public Integer getBillNum() {
+		return billNum;
+	}
+
+	public void setBillNum(Integer billNum) {
+		this.billNum = billNum;
+	}
+
+	public Timestamp getBillingDate() {
+		return billingDate;
+	}
+
+	public void setBillingDate(Timestamp billingDate) {
+		this.billingDate = billingDate;
 	}
 
 }

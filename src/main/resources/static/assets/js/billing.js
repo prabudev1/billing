@@ -37,8 +37,7 @@ $(document).ready(function() {
 				pinCode : $("#inputZip").val(), 
 				dob : $("#hiddenDob").val(),
 				gender : $("#inputGender").val(),
-				isActive : $('#isActive').is(":checked"),
-				createdBy : 'ADMIN',
+				isActive : $('#isActive').is(":checked")
 			};
 	    	
 	    	$.ajax({
@@ -173,6 +172,10 @@ $(document).ready(function() {
 		$("#inputName").val(""); 
 		$("#inputEmail").val(""); 
 		$("#inputMobile").val("");
+		
+		$("#inputAadhar").val(""); 
+		$("#inputGstin").val("");
+		
 		$("#hiddenDob").val("");
 		$("#inputGender").val("");
 		$("#inputAddress").val("");
@@ -501,8 +504,7 @@ $(document).ready(function() {
 	    			messurement : $("#inputProductMeasurement").val(),
 	    			type : $("#inputProductType").val(),
 	    			value : $("#inputProductValue").val(),
-	    			isActive : $('#isProductActive').is(":checked"),
-	    			createdBy : 'ADMIN'
+	    			isActive : $('#isProductActive').is(":checked")
 			};
 	    	
 	    	$.ajax({
@@ -566,7 +568,6 @@ $(document).ready(function() {
 			var valGstStateVal = $("#spanSGST").html();
 			var valGstCentralVal = $("#spanCGST").html()
 			var valTotal = $("#spanGrandTotalPrice").html();
-			var valCreatedBy = 'ADMIN';
 			
 			var jsonBilling = {
 					customer: { id : valCustomerId},
@@ -577,7 +578,6 @@ $(document).ready(function() {
 					gstStateVal: valGstStateVal,
 					gstCentralVal: valGstCentralVal,
 					total: valTotal,
-					createdBy: valCreatedBy,
 					billingItems : [{}]
 			};
 			
@@ -600,8 +600,7 @@ $(document).ready(function() {
 							product: {id: valProductId},
 							productName: eachBillItem.name,
 							qty: valQty,
-							value: valValue,
-							createdBy: 'ADMIN'
+							value: valValue
 					};
 					jsonBillingItems.push(jsonEachBillItem);
 				}

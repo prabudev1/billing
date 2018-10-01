@@ -23,13 +23,13 @@ public class CustomerDAO implements ICustomerDAO {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Customer> getAllCustomers(String serchVal, String orderBY) {
+	public List<Customer> getAllCustomers(String userIdentifier, String serchVal, String orderBY) {
 		if (serchVal != null && !serchVal.equals("")) {
 			serchVal = "%" + serchVal + "%";
 		} else {
 			serchVal = "%";
 		}
-		String hql = "FROM Customer as cust where cust.name like ? or cust.mobile like ? ";
+		String hql = "FROM Customer as cust where cust.createdBy = ? and (cust.name like ? or cust.mobile like ? )";
 		if (orderBY != null) {
 			if (orderBY.equalsIgnoreCase("1")) {
 				hql += " order by cust.name asc ";
@@ -45,15 +45,21 @@ public class CustomerDAO implements ICustomerDAO {
 				hql += " order by cust.createdOn desc ";
 			}
 		}
-		return (List<Customer>) entityManager.createQuery(hql).setParameter(0, serchVal).setParameter(1, serchVal).getResultList();
+		return (List<Customer>) entityManager.createQuery(hql)
+				.setParameter(0, userIdentifier)
+				.setParameter(1, serchVal)
+				.setParameter(2, serchVal).getResultList();
 	}
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Customer> getCustomersByNameOrMobile(String serchVal) {
+	public List<Customer> getCustomersByNameOrMobile(String userIdentifier, String serchVal) {
 		serchVal = "%" + serchVal + "%";
-		String hql = "FROM Customer as cust where cust.name like ? or cust.mobile like ?";
-		return (List<Customer>) entityManager.createQuery(hql).setParameter(0, serchVal).setParameter(1, serchVal).getResultList();
+		String hql = "FROM Customer as cust where cust.createdBy = ? and (cust.name like ? or cust.mobile like ?)";
+		return (List<Customer>) entityManager.createQuery(hql)
+				.setParameter(0, userIdentifier)
+				.setParameter(1, serchVal)
+				.setParameter(2, serchVal).getResultList();
 	}
 
 	@Override
@@ -72,9 +78,12 @@ public class CustomerDAO implements ICustomerDAO {
 	}
 
 	@Override
-	public boolean customerExists(String newMobileNo, String prevMobileNo) {
-		String hql = "FROM Customer as cust WHERE cust.mobile = ? and cust.mobile <> ?";
-		int count = entityManager.createQuery(hql).setParameter(0, newMobileNo).setParameter(1, prevMobileNo).getResultList().size();
+	public boolean customerExists(String userIdentifier, String newMobileNo, String prevMobileNo) {
+		String hql = "FROM Customer as cust WHERE cust.createdBy = ? and (cust.mobile = ? and cust.mobile <> ?)";
+		int count = entityManager.createQuery(hql)
+				.setParameter(0, userIdentifier)
+				.setParameter(1, newMobileNo)
+				.setParameter(2, prevMobileNo).getResultList().size();
 		return count > 0 ? true : false;
 	}
 }

@@ -216,8 +216,7 @@ $(document).ready(function() {
 				pinCode : $("#inputZip").val(), 
 				dob : $("#hiddenDob").val(),
 				gender : $("#inputGender").val(),
-				activeFlag : $('#isActive').is(":checked"),
-				createdBy : 'ADMIN',
+				activeFlag : $('#isActive').is(":checked")
 			};
 	    	
 	    	var varURL = "/customer/add/";

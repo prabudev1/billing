@@ -1,5 +1,6 @@
 package com.gpware.billing.controller;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,22 +33,23 @@ public class CustomerController {
 	}
 
 	@GetMapping("getSearchList")
-	public ResponseEntity<List<Customer>> getCustomersByNameOrMobile(@RequestParam("q") String serchVal) {
-		List<Customer> customerList = customerService.getCustomersByNameOrMobile(serchVal);
+	public ResponseEntity<List<Customer>> getCustomersByNameOrMobile(Principal principal, @RequestParam("q") String serchVal) {
+		List<Customer> customerList = customerService.getCustomersByNameOrMobile(principal.getName(), serchVal);
 		return new ResponseEntity<List<Customer>>(customerList, HttpStatus.OK);
 	}
 
 	@GetMapping("getAll")
 	@CrossOrigin
-	public ResponseEntity<List<Customer>> getAllCustomers(@RequestParam("q") String serchVal, @RequestParam("o") String orderBy) {
-		List<Customer> list = customerService.getAllCustomers(serchVal, orderBy);
+	public ResponseEntity<List<Customer>> getAllCustomers(Principal principal, @RequestParam("q") String serchVal, @RequestParam("o") String orderBy) {
+		List<Customer> list = customerService.getAllCustomers(principal.getName(),serchVal, orderBy);
 		return new ResponseEntity<List<Customer>>(list, HttpStatus.OK);
 	}
 
 	@CrossOrigin
 	@PostMapping("add")
-	public ResponseEntity<String> addCustomer(@RequestBody Customer customer) {
-		boolean flag = customerService.addCustomer(customer);
+	public ResponseEntity<String> addCustomer(Principal principal, @RequestBody Customer customer) {
+		customer.setCreatedBy(principal.getName());
+		boolean flag = customerService.addCustomer(principal.getName(), customer);
 		if (flag == false) {
 			return new ResponseEntity<String>(HttpStatus.CONFLICT);
 		}
@@ -56,8 +58,8 @@ public class CustomerController {
 
 	@CrossOrigin
 	@PostMapping("update")
-	public ResponseEntity<String> updateCustomer(@RequestBody Customer customer) {
-		boolean flag = customerService.updateCustomer(customer);
+	public ResponseEntity<String> updateCustomer(Principal principal, @RequestBody Customer customer) {
+		boolean flag = customerService.updateCustomer(principal.getName(), customer);
 		if (flag == false) {
 			return new ResponseEntity<String>(HttpStatus.CONFLICT);
 		}

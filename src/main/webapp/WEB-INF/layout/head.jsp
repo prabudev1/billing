@@ -2,14 +2,17 @@
 <meta charset="UTF-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name='title' content='Gpware - Info'>
-<meta name='description' content=''>
-<meta name='url' content=''>
-<meta name='keywords' content=''>
+<meta name='description' content='Simple, efficient and free GST Billing Software. Specially designed for all small business.'>
+<meta name='url' content='http://www.gpwares.com/'>
+<meta name='keywords' content='Billing, GST Software'>
 
-<meta property='og:title' content='Gpware - Info' />
-<meta property='og:type' content='Website' />
-<meta property='og:url' content='' />
-<meta property='og:description' content='' />
+<meta property="og:title" content="GPWARE" />
+<meta property="og:description" content="Simple, efficient and free GST Billing Software. Specially designed for all small business." />
+<meta property="og:url" content="http://www.gpwares.com/" />
+<meta property="og:site_name" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="http://www.gpwares.com/assets/img/logo.png" />
+<meta property="fb:app_id" content="" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 

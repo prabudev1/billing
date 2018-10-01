@@ -5,9 +5,9 @@ import java.util.List;
 import com.gpware.billing.model.Product;
 
 public interface IProductDAO {
-	List<Product> getAllProducts(String serchVal, String orderBy);
+	List<Product> getAllProducts(String userIdentifier, String serchVal, String orderBy);
 	
-	List<Product> getProductsByNameOrCode(String serchVal);
+	List<Product> getProductsByNameOrCode(String userIdentifier, String serchVal);
 	
 	Product getProductById(int productId);
 
@@ -17,5 +17,5 @@ public interface IProductDAO {
 
 	void deleteProduct(int productId);
 	
-	boolean productExists(String name, String code);
+	boolean productExists(String userIdentifier, String name, String code);
 }

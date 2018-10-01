@@ -8,7 +8,7 @@ import com.gpware.billing.model.Billing;
 
 public interface IBillingService {
 	
-	List<Billing> getBillingList(String fromDate, String toDate, String orderBY);
+	List<Billing> getBillingList(String userIdentifier, String fromDate, String toDate, String orderBY);
 
 	Billing getBillingById(int billingId);
 
@@ -16,8 +16,8 @@ public interface IBillingService {
 
 	void deleteBilling(int billingId);
 	
-	BillingReportDTO getReportData();
+	BillingReportDTO getReportData(String userIdentifier, Integer reportDays);
 
-	byte[] downloadExcel(String fromDate, String toDate, String orderBY) throws IOException;
+	byte[] downloadExcel(String userIdentifier, String fromDate, String toDate, String orderBY) throws IOException;
 
 }

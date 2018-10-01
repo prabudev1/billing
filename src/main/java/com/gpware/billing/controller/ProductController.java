@@ -1,5 +1,6 @@
 package com.gpware.billing.controller;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,21 +35,22 @@ public class ProductController {
 
 	@GetMapping("getAll")
 	@CrossOrigin
-	public ResponseEntity<List<Product>> getAllProducts(@RequestParam("q") String serchVal, @RequestParam("o") String orderBy) {
-		List<Product> list = productService.getAllProducts(serchVal, orderBy);
+	public ResponseEntity<List<Product>> getAllProducts(Principal principal, @RequestParam("q") String serchVal, @RequestParam("o") String orderBy) {
+		List<Product> list = productService.getAllProducts(principal.getName(), serchVal, orderBy);
 		return new ResponseEntity<List<Product>>(list, HttpStatus.OK);
 	}
 
 	@GetMapping("getSearchList")
-	public ResponseEntity<List<Product>> getCustomersByNameOrMobile(@RequestParam("q") String serchVal) {
-		List<Product> customerList = productService.getProductsByNameOrCode(serchVal);
+	public ResponseEntity<List<Product>> getCustomersByNameOrMobile(Principal principal, @RequestParam("q") String serchVal) {
+		List<Product> customerList = productService.getProductsByNameOrCode(principal.getName(), serchVal);
 		return new ResponseEntity<List<Product>>(customerList, HttpStatus.OK);
 	}
 
 	@CrossOrigin
 	@PostMapping("add")
-	public ResponseEntity<String> addProduct(@RequestBody Product product) {
-		boolean flag = productService.addProduct(product);
+	public ResponseEntity<String> addProduct(Principal principal, @RequestBody Product product) {
+		product.setCreatedBy(principal.getName());
+		boolean flag = productService.addProduct(principal.getName(), product);
 		if (flag == false) {
 			return new ResponseEntity<String>(HttpStatus.CONFLICT);
 		}
@@ -57,19 +59,12 @@ public class ProductController {
 	
 	@CrossOrigin
 	@PostMapping("update")
-	public ResponseEntity<String> updateCustomer(@RequestBody Product product) {
-		boolean flag = productService.updateProduct(product);
+	public ResponseEntity<String> updateProduct(Principal principal, @RequestBody Product product) {
+		boolean flag = productService.updateProduct(principal.getName(), product);
 		if (flag == false) {
 			return new ResponseEntity<String>(HttpStatus.CONFLICT);
 		}
 		return new ResponseEntity<String>(product.getId() + "", HttpStatus.OK);
-
-	}
-
-	@PutMapping("update")
-	public ResponseEntity<Void> updateProduct(@RequestBody Product product) {
-		productService.updateProduct(product);
-		return new ResponseEntity<Void>(HttpStatus.OK);
 
 	}
 

@@ -30,7 +30,7 @@ public class BillingDAO implements IBillingDAO {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Billing> getAllBillings(Integer limitRowCount) {
+	public List<Billing> getAllBillings(String userIdentifier, Integer limitRowCount) {
 
 		if (limitRowCount > 0) {
 			int minusDate = limitRowCount - (limitRowCount * 2);
@@ -42,11 +42,11 @@ public class BillingDAO implements IBillingDAO {
 			cal.add(Calendar.DATE, minusDate);
 			String fromDate = sdf.format(cal.getTime()) + " 00:00:00";
 
-			String hql = " FROM Billing as b where b.createdOn >= '" + fromDate + "' and b.createdOn <= '" + currentDate + "' ORDER BY b.createdOn desc ";
+			String hql = " FROM Billing as b where b.createdBy = '"+ userIdentifier + "' and b.createdOn >= '" + fromDate + "' and b.createdOn <= '" + currentDate + "' ORDER BY b.createdOn desc ";
 			Query query = entityManager.createQuery(hql);
 			return (List<Billing>) query.getResultList();
 		} else {
-			String hql = " FROM Billing as bill ORDER BY bill.createdOn desc";
+			String hql = " FROM Billing as bill where bill.createdBy = '"+ userIdentifier + "' ORDER BY bill.createdOn desc";
 			Query query = entityManager.createQuery(hql);
 			return (List<Billing>) query.getResultList();
 		}
@@ -54,8 +54,8 @@ public class BillingDAO implements IBillingDAO {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Billing> getBillingList(String pFromDate, String pToDate, String orderBY) {
-		String hql = " FROM Billing as b where b.createdOn >= '" + pFromDate + "' and b.createdOn <= '" + pToDate + "' ";
+	public List<Billing> getBillingList(String userIdentifier, String pFromDate, String pToDate, String orderBY) {
+		String hql = " FROM Billing as b where b.createdBy = '" + userIdentifier + "' and b.createdOn >= '" + pFromDate + "' and b.createdOn <= '" + pToDate + "' ";
 
 		if (orderBY != null) {
 			if (orderBY.equalsIgnoreCase("1")) {
@@ -83,10 +83,17 @@ public class BillingDAO implements IBillingDAO {
 	}
 
 	@Override
-	public BillingReportDTO getBillReportCOunt() {
+	public BillingReportDTO getBillReportCOunt(String userIdentifier) {
 		BillingReportDTO billReport = new BillingReportDTO();
-		StoredProcedureQuery query = entityManager.createStoredProcedureQuery("GetReportData").registerStoredProcedureParameter("revenue", BigDecimal.class, ParameterMode.OUT).registerStoredProcedureParameter("customerCount", BigDecimal.class, ParameterMode.OUT).registerStoredProcedureParameter("productCount", BigDecimal.class, ParameterMode.OUT).registerStoredProcedureParameter("invoiceCount", BigDecimal.class, ParameterMode.OUT);
+		StoredProcedureQuery query = entityManager.createStoredProcedureQuery("GetReportData")
+				.registerStoredProcedureParameter("userIdentifier", String.class, ParameterMode.IN)
+				.registerStoredProcedureParameter("revenue", BigDecimal.class, ParameterMode.OUT)
+				.registerStoredProcedureParameter("customerCount", BigDecimal.class, ParameterMode.OUT)
+				.registerStoredProcedureParameter("productCount", BigDecimal.class, ParameterMode.OUT)
+				.registerStoredProcedureParameter("invoiceCount", BigDecimal.class, ParameterMode.OUT);
+		query.setParameter("userIdentifier", userIdentifier);
 		query.execute();
+		
 		BigDecimal revenue = (BigDecimal) query.getOutputParameterValue("revenue");
 		BigDecimal customerCount = (BigDecimal) query.getOutputParameterValue("customerCount");
 		BigDecimal productCount = (BigDecimal) query.getOutputParameterValue("productCount");

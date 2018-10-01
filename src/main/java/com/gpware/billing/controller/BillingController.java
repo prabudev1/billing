@@ -1,6 +1,7 @@
 package com.gpware.billing.controller;
 
 import java.io.IOException;
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import com.gpware.billing.dto.BillingDTO;
 import com.gpware.billing.dto.BillingReportDTO;
 import com.gpware.billing.helper.BillingHelper;
+import com.gpware.billing.helper.UserProperties;
+import com.gpware.billing.helper.UserPropertyLoader;
 import com.gpware.billing.model.Billing;
 import com.gpware.billing.services.IBillingService;
 
@@ -44,16 +47,17 @@ public class BillingController {
 
 	@CrossOrigin
 	@GetMapping("getBillingList")
-	public ResponseEntity<List<BillingDTO>> getBillingList(@RequestParam("fd") String fromDate, @RequestParam("td") String toDate, @RequestParam("o") String orderBy) {
-		List<Billing> billingList = billingService.getBillingList(fromDate, toDate, orderBy);
+	public ResponseEntity<List<BillingDTO>> getBillingList(Principal principal, @RequestParam("fd") String fromDate, @RequestParam("td") String toDate, @RequestParam("o") String orderBy) {
+		List<Billing> billingList = billingService.getBillingList(principal.getName(), fromDate, toDate, orderBy);
 		List<BillingDTO> billingDtoList = billingHelper.copyBillingList(billingList);
 		return new ResponseEntity<List<BillingDTO>>(billingDtoList, HttpStatus.OK);
 	}
 
 	@CrossOrigin
 	@PostMapping("add")
-	public ResponseEntity<String> addBilling(@RequestBody BillingDTO billingDto) {
+	public ResponseEntity<String> addBilling(Principal principal, @RequestBody BillingDTO billingDto) {
 		Billing billing = billingHelper.copyBilling(billingDto);
+		billing.setCreatedBy(principal.getName());
 		billingService.addBilling(billing);
 		return new ResponseEntity<String>(billing.getId() + "", HttpStatus.OK);
 	}
@@ -66,15 +70,16 @@ public class BillingController {
 
 	@CrossOrigin
 	@GetMapping("getReportData")
-	public ResponseEntity<BillingReportDTO> getReportData() {
-		BillingReportDTO billReport = billingService.getReportData();
+	public ResponseEntity<BillingReportDTO> getReportData(Principal principal) {
+		UserProperties userProp = UserPropertyLoader.getUserProperty(principal.getName());
+		BillingReportDTO billReport = billingService.getReportData(principal.getName(), userProp.getReportDays());
 		return new ResponseEntity<BillingReportDTO>(billReport, HttpStatus.OK);
 	}
 
 	@ResponseStatus(HttpStatus.OK)
 	@GetMapping("downloadExcel")
-	public HttpEntity<byte[]> downloadExcelReport(@RequestParam("fd") String fromDate, @RequestParam("td") String toDate, @RequestParam("o") String orderBy) throws IOException {
-		byte[] excelContent = billingService.downloadExcel(fromDate, toDate, orderBy);
+	public HttpEntity<byte[]> downloadExcelReport(Principal principal, @RequestParam("fd") String fromDate, @RequestParam("td") String toDate, @RequestParam("o") String orderBy) throws IOException {
+		byte[] excelContent = billingService.downloadExcel(principal.getName(), fromDate, toDate, orderBy);
 		HttpHeaders header = new HttpHeaders();
 		header.setContentType(new MediaType("application", "vnd.openxmlformats-officedocument.spreadsheetml.sheet"));
 		header.set(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=my_file.xlsx");

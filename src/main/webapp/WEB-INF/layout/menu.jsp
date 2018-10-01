@@ -1,5 +1,6 @@
+
 <nav id="sidebar">
-	<div class="sidebar-header head-title-3">Kavin<br>Snacks</div>
+	<div class="sidebar-header head-title-3">${CONST_UI_USER_LOGIN_DISPLAY_NAME}</div>
 	<ul class="list-unstyled components">
        	<li class="${param.mnActiveHome}"><a href="/home"><span class='fa fa-home'></span>Home</a></li>
 		<li class="${param.mnBillingHome}"><a href="/billing"><span class='fa fa-book'></span>Billing</a></li>
@@ -39,3 +40,4 @@
 <div class="loader-container" id="pageLoadingContainer">
 	<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 </div>
+

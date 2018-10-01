@@ -215,8 +215,13 @@ a, a:active, a:hover {
 }
 .user-icon {
 	color: #f4511e;
-	font-size: 32px;
-	padding-top: 7px;
+	font-size: 24px;
+	padding-top: 15px;
+	padding-right: 20px;
+}
+.user-icon-name {
+	font-weight: bold;
+	text-transform: uppercase;
 }
 .btn-primary:hover {
   background-color: #38c2ad;

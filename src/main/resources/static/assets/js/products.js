@@ -184,8 +184,7 @@ $(document).ready(function() {
 	    			messurement : $("#inputProductMeasurement").val(),
 	    			type : $("#inputProductType").val(),
 	    			value : $("#inputProductValue").val(),
-	    			activeFlag : $('#isProductActive').is(":checked"),
-	    			createdBy : 'ADMIN'
+	    			activeFlag : $('#isProductActive').is(":checked")
 			};
 	    	var varURL = "/product/add/";
 	    	if ($("#hiddenPrdId").val() > 0) {

@@ -110,11 +110,8 @@
 				</tr>
 				<tr>
 					<td width="70%" class="prd-content" >
-						<span class="highlight" style="text-transform: uppercase;">Kavin Snacks</span><br> 
-						41 B/3, Sivaramu Nadar 6th Street,<br>
-						T.N.Puthukudi, Puliyankudi - 627855<br> 
-						Mobile: 74022 44433<br><br>
-						GSTIN/UIN: 33BSRPB3779B1ZS
+						<span class="highlight" style="text-transform: uppercase;">${CONST_UI_USER_LOGIN_PRINT_NAME}</span><br> 
+						${CONST_UI_USER_LOGIN_ADDR_HTML}
 					</td>
 					<td width="15%" class="prd-content">
 						<span class="highlight">Invoice No:&nbsp;</span><br> 
