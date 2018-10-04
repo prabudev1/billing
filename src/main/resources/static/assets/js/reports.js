@@ -115,7 +115,7 @@ $(document).ready(function() {
             }
         },
         rowRenderer: function(item) {
-    		var dateStr = moment(item.createdOn).format("DD-MMM-YYYY");
+    		var dateStr = moment(item.billingDate).format("DD-MMM-YYYY");
     		if ($("#listView option:selected").val() == 2) {
     			var displayName = "NA";
         		if (item.customer != null) {

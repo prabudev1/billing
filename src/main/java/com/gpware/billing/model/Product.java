@@ -26,6 +26,9 @@ public class Product implements Serializable {
 	@Column(name = "NAME")
 	private String name;
 
+	@Column(name = "HSN")
+	private String hsn;
+
 	@Column(name = "DESCRIPTION")
 	private String desc;
 
@@ -71,6 +74,14 @@ public class Product implements Serializable {
 
 	public String getName() {
 		return name;
+	}
+
+	public String getHsn() {
+		return hsn;
+	}
+
+	public void setHsn(String hsn) {
+		this.hsn = hsn;
 	}
 
 	public void setName(String name) {

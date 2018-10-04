@@ -42,11 +42,11 @@ public class BillingDAO implements IBillingDAO {
 			cal.add(Calendar.DATE, minusDate);
 			String fromDate = sdf.format(cal.getTime()) + " 00:00:00";
 
-			String hql = " FROM Billing as b where b.createdBy = '"+ userIdentifier + "' and b.createdOn >= '" + fromDate + "' and b.createdOn <= '" + currentDate + "' ORDER BY b.createdOn desc ";
+			String hql = " FROM Billing as b where b.createdBy = '"+ userIdentifier + "' and b.billingDate >= '" + fromDate + "' and b.billingDate <= '" + currentDate + "' ORDER BY b.billingDate desc ";
 			Query query = entityManager.createQuery(hql);
 			return (List<Billing>) query.getResultList();
 		} else {
-			String hql = " FROM Billing as bill where bill.createdBy = '"+ userIdentifier + "' ORDER BY bill.createdOn desc";
+			String hql = " FROM Billing as bill where bill.createdBy = '"+ userIdentifier + "' ORDER BY bill.billingDate desc";
 			Query query = entityManager.createQuery(hql);
 			return (List<Billing>) query.getResultList();
 		}
@@ -55,17 +55,17 @@ public class BillingDAO implements IBillingDAO {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Billing> getBillingList(String userIdentifier, String pFromDate, String pToDate, String orderBY) {
-		String hql = " FROM Billing as b where b.createdBy = '" + userIdentifier + "' and b.createdOn >= '" + pFromDate + "' and b.createdOn <= '" + pToDate + "' ";
+		String hql = " FROM Billing as b where b.createdBy = '" + userIdentifier + "' and b.billingDate >= '" + pFromDate + "' and b.billingDate <= '" + pToDate + "' ";
 
 		if (orderBY != null) {
 			if (orderBY.equalsIgnoreCase("1")) {
-				hql += " ORDER BY b.createdOn desc ";
+				hql += " ORDER BY b.billingDate desc, b.billNum desc ";
 			} else if (orderBY.equalsIgnoreCase("2")) {
-				hql += " ORDER BY b.createdOn asc ";
+				hql += " ORDER BY b.billingDate asc, b.billNum desc ";
 			} else if (orderBY.equalsIgnoreCase("5")) {
-				hql += " ORDER BY b.total desc ";
+				hql += " ORDER BY b.total desc, b.billNum desc ";
 			} else if (orderBY.equalsIgnoreCase("6")) {
-				hql += " ORDER BY b.total asc ";
+				hql += " ORDER BY b.total asc, b.billNum desc ";
 			}
 		}
 		Query query = entityManager.createQuery(hql);

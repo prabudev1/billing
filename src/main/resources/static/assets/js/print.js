@@ -1,6 +1,7 @@
 var AMOUT_IN_WORDS_1 = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine ','ten ','eleven ','twelve ','thirteen ','fourteen ','fifteen ','sixteen ','seventeen ','eighteen ','nineteen '];
 var AMOUT_IN_WORDS_2 = ['', '', 'twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
 
+var REC_PER_PAGE = 20;
 $( document ).ready(function() {
 
 	$("#spanCGSTPercent").html(APP_PROPS_JSON.GST_CENTRAL_PERCENT);
@@ -29,7 +30,7 @@ $( document ).ready(function() {
 		success: function(data) {
 			$("#billNumber").html(paddingBillingNo(data.billNum));
 			
-			var dateValue = moment(data.createdOn)
+			var dateValue = moment(data.billingDate)
 			//var dateStr = dateValue.format("DD-MMM-YYYY HH:mm:ss");
 			var dateStr = dateValue.format("DD-MMM-YYYY");
          	if (dateStr == "Invalid date" || dateStr == undefined) {
@@ -53,19 +54,33 @@ $( document ).ready(function() {
                 billRec = data.billingItems[i];
                 var prdName = "NA";
             	var prdValue = "NA";
-            	if (billRec.product != null) {
+            	var prdHsn = "NA";
+            	if (billRec.product != null && billRec.product != "") {
             		prdName = billRec.product.name;
             		prdValue = billRec.product.value;
+            		prdHsn = billRec.product.hsn;
             	}
                 $("#billingRecords").append($("<tr>")
                 		.append($("<td>").text( ((+i) + 1)))
                 		.append($("<td>").text(prdName))
+                		.append($("<td>").text(prdHsn))
                 		.append($("<td>").text(prdValue))
                 		.append($("<td>").text(billRec.qty))
                 		.append($("<td>").text(roundOf2Digit(billRec.value))));
             }
-            window.print();
-            window.close();
+            
+            var reminingRecords = REC_PER_PAGE - data.billingItems.length;
+            for (i = 0; i < reminingRecords; i++) {
+                $("#billingRecords").append($("<tr>")
+                		.append($("<td>").text(""))
+                		.append($("<td>").text(""))
+                		.append($("<td>").text(""))
+                		.append($("<td>").text(""))
+                		.append($("<td>").text(""))
+                		.append($("<td>").html("&nbsp;")));
+            }
+            // window.print();
+            // window.close();
 		},
 		error: function(jqXHR, textStatus, errorThrown) {
 			alert("OOPS, Something went wrong! Please try again or contact administrator");

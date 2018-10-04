@@ -40,9 +40,10 @@
 				margin: 0 auto;
 				margin-bottom: 0.5cm;
 				/* box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5); */
-    			/* height: 4.135in; */
+    			height: 8.5in;
 				width: 5.845in;
 			    padding-bottom: 10px;
+			    page-break-after: always;
 			}
 			
 			.highlight {
@@ -63,11 +64,14 @@
 			.print-product-table thead tr td {
 				border-right: 0.5px solid black;
 				border-bottom: 0.5px solid black;
+				padding-top: 3px;
+    			padding-bottom: 3px;
 			}
 			
 			.print-product-table tbody tr td,
 			.print-product-table tfoot tr td {
 				border-right: 0.5px solid black;
+				padding-top: 3px;
 			}
 			
 			.print-product-table tr td:last-child {
@@ -87,6 +91,7 @@
 				text-align: center;
 			}
 			.print-product-table tbody tr td:nth-child(2),
+			.print-product-table tbody tr td:nth-child(3),
 			.print-product-table tfoot tr:last-child td {
 				text-align: left;
 			}
@@ -98,7 +103,11 @@
 	 			padding-bottom: 10px;
 			}
 			.prd-content, .cust-content {
-				padding: 5px;
+				padding: 10px 5px 10px 5px;
+			}
+			.space-top-bt {
+				padding-top: 5px;
+    			padding-bottom: 5px;
 			}
 		</style>
 	</head>
@@ -110,7 +119,7 @@
 				</tr>
 				<tr>
 					<td width="70%" class="prd-content" >
-						<span class="highlight" style="text-transform: uppercase;">${CONST_UI_USER_LOGIN_PRINT_NAME}</span><br> 
+						<span class="highlight" style="text-transform: uppercase; font-size: 150%;">${CONST_UI_USER_LOGIN_PRINT_NAME}</span><br> 
 						${CONST_UI_USER_LOGIN_ADDR_HTML}
 					</td>
 					<td width="15%" class="prd-content">
@@ -136,18 +145,20 @@
 							<thead>
 								<tr class="head-row">
 									<td width="3%" class="highlight">S.No</td>
-									<td width="80%" class="highlight">Product Name</td>
-									<td width="3%" class="highlight">Rate</td>
-									<td width="3%" class="highlight">Qty</td>
-									<td width="7%" class="highlight">Amount</td>
+									<td width="60%" class="highlight">Product Name</td>
+									<td width="15%" class="highlight">HSN</td>
+									<td width="7%" class="highlight">Rate</td>
+									<td width="7%" class="highlight">Qty</td>
+									<td width="8%" class="highlight">Amount</td>
 								</tr>
 							</thead>
 							<tbody id="billingRecords"></tbody>
 							<tfoot>
-								<tr class="empty-border"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+								<tr class="empty-border"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 								<tr class="empty-border">
 									<td>&nbsp;</td>
 									<td class="highlight">Sub Total:</td>
+									<td>&nbsp;</td>
 									<td>&nbsp;</td>
 									<td>Rs.</td>
 									<td><span id="subTotal"></span></td>
@@ -156,6 +167,7 @@
 									<td>&nbsp;</td>
 									<td class="highlight">CGST <span id="spanCGSTPercent"></span>%:</td>
 									<td>&nbsp;</td>
+									<td>&nbsp;</td>
 									<td>Rs.</td>
 									<td><span id="cgstVal"></span></td>
 								</tr>
@@ -163,31 +175,43 @@
 									<td>&nbsp;</td>
 									<td class="highlight">SGST <span id="spanSGSTPercent"></span>%:</td>
 									<td>&nbsp;</td>
+									<td>&nbsp;</td>
 									<td>Rs.</td>
 									<td><span id="sgstVal"></span></td>
 								</tr>
 								
-								<tr class="empty-border"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-								<tr class="empty-border"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-								<tr class="empty-border"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
-								<tr class="empty-border"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+								<tr class="empty-border"><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 								
 								<tr class="total-row">
 									<td class="highlight" colspan="2">
 										Grand Total:
 									</td>
 									<td>&nbsp;</td>
+									<td>&nbsp;</td>
 									<td>Rs.</td>
 									<td><span id="grandTotal"></span></td>
 								</tr>
 								<tr  class="empty-border">
-									<td colspan="5" style="border-right: none;">
+									<td colspan="5" style="border-right: none; border-bottom: none" class="space-top-bt">
 										<span class="highlight">Amount in words:</span><br> 
 										<span id="amount-in-words">&nbsp;</span>
 									</td>
 								</tr>
 							</tfoot>
 						</table>
+					</td>
+				</tr>
+				<tr>
+					<td class="cust-content space-top-bt" style="border-right: none">
+						<span class="highlight">Declaration</span><br>
+						<span id="custInfo">
+							We declare that this invoice shows the actual prices of the goods<br>
+							described and that all particulars are true and correct.
+						</span>
+					</td>
+					<td colspan="2" class="cust-content space-top-bt" align="right" style="border-left: none">
+						For <span style="font-weight: bold; text-transform: uppercase;">${CONST_UI_USER_LOGIN_PRINT_NAME}</span><br><br><br>
+						Authorized Signatory
 					</td>
 				</tr>
 			</table>

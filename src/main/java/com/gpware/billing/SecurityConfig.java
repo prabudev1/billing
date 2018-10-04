@@ -40,6 +40,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		
 		http.httpBasic().and().authorizeRequests()
+			.antMatchers("/error.jsp").permitAll()
+			.antMatchers("/assets/img/**").permitAll()
 			.antMatchers("/").hasRole("USER")
 			.antMatchers("/favicon.ico").hasRole("USER")
 			.antMatchers("/assets/**").hasRole("USER")

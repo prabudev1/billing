@@ -7,12 +7,11 @@
 <meta name='keywords' content='Billing, GST Software'>
 
 <meta property="og:title" content="GPWARE" />
-<meta property="og:description" content="Simple, efficient and free GST Billing Software. Specially designed for all small business." />
-<meta property="og:url" content="http://www.gpwares.com/" />
-<meta property="og:site_name" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="http://www.gpwares.com/assets/img/logo.png" />
-<meta property="fb:app_id" content="" />
+<meta property="og:url" content="http://www.gpwares.com/" />
+<meta property="og:description" content="Simple, efficient and free GST Billing Software. Specially designed for all small business." />
+<meta property="og:site_name" content="GPWARE" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 

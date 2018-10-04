@@ -27,7 +27,7 @@ $( document ).ready(function() {
             for (i = 0; i < data.billingItems.length; i++) {
                 billRec = data.billingItems[i];
                 var totalValue = roundOf2Digit(billRec.total);
-                var dateValue = moment(billRec.createdOn)
+                var dateValue = moment(billRec.billingDate)
                 var dateStr = dateValue.format("DD-MMM-YYYY HH:mm:ss");
             	if (dateStr == "Invalid date" || dateStr == undefined) {
             		dateStr = "";

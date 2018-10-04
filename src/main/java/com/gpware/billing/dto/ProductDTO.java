@@ -9,6 +9,7 @@ public class ProductDTO implements Serializable {
 	private int id;
 	private String code;
 	private String name;
+	private String hsn;
 	private String desc;
 	private String type;
 	private String messurement;
@@ -41,6 +42,14 @@ public class ProductDTO implements Serializable {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getHsn() {
+		return hsn;
+	}
+
+	public void setHsn(String hsn) {
+		this.hsn = hsn;
 	}
 
 	public String getDesc() {

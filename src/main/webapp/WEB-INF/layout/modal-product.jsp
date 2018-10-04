@@ -34,9 +34,13 @@
 								</div>
 							</div>
 							<div class="form-row">
-								<div class="form-group col-md-12">
-									<label for="inputProductDesc">Code</label> 
+								<div class="form-group col-md-6">
+									<label for="inputProductDesc">Product Description</label> 
 									<input type="text"class="form-control" id="inputProductDesc" placeholder="Product Description" tabindex="4">
+								</div>
+								<div class="form-group col-md-6">
+									<label for="inputProductHsn">HSN/SAC Code</label> 
+									<input type="text"class="form-control" id="inputProductHsn" placeholder="HSN or SAC Code" tabindex="4">
 								</div>
 							</div>
 							<div class="form-row">

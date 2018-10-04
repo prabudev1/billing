@@ -5,7 +5,7 @@
 		</div>
 		<div class="pull-right">
         	Powered by <a href="http://www.gpwares.com" class="text-muted" target="_blank">GPWARES</a>
-        	<span style="padding-left: 10px;font-size: 70%;" class="text-muted">V2&nbsp;20092018</span>
+        	<span style="padding-left: 10px;font-size: 70%;" class="text-muted">V3&nbsp;03102018</span>
 		</div> 
 	</div>
 </section>

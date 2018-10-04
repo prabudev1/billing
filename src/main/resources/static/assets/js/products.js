@@ -83,6 +83,7 @@ $(document).ready(function() {
         		dateStr = "";
         	}
         	
+        	var valHSN = nullToString(item.hsn, "Unavailable");
         	var valMessurement = nullToString(item.messurement, "Unavailable");
         	var valDesc = nullToString(item.desc, "");
         	var valType = nullToString(item.type, "Unavailable");
@@ -90,7 +91,8 @@ $(document).ready(function() {
             var $info = $("<div>").addClass("list-info")
                 .append($("<p>").append($("<strong>").text(item.code + " - " + item.name)))
                 .append($("<p>").text(valDesc))
-                .append($("<p>").addClass("list-email-info").append( ($("<span>").text("Type: "))).append(valType))
+                .append($("<p>").addClass("list-email-info").append( ($("<span>").text("HSN/SAC: "))).append(valHSN))
+                .append($("<p>").append( ($("<span>").text("Type: "))).append(valType))
                 .append($("<p>").append( ($("<span>").text("Messurement: "))).append(valMessurement))
                 .append($("<p>").append( ($("<span>").text("Value: "))).append(item.value))
                 .append($("<p>").addClass("list-time-info").append(dateStr));
@@ -181,7 +183,8 @@ $(document).ready(function() {
 	    			code: $("#inputCode").val(), 
 	    			name : $("#formProductName").val(), 
 	    			desc : $("#inputProductDesc").val(),
-	    			messurement : $("#inputProductMeasurement").val(),
+	    			desc : $("#inputProductDesc").val(),
+	    			hsn : $("#inputProductHsn").val(),
 	    			type : $("#inputProductType").val(),
 	    			value : $("#inputProductValue").val(),
 	    			activeFlag : $('#isProductActive').is(":checked")
@@ -236,6 +239,7 @@ $(document).ready(function() {
 		$("#inputCode").val(""); 
 		$("#formProductName").val(""); 
 		$("#inputProductDesc").val("");
+		$("#inputProductHsn").val("");
 		$("#inputProductMeasurement").val("");
 		$("#inputProductType").val("");
 		$("#inputProductValue").val("");	
@@ -247,6 +251,7 @@ $(document).ready(function() {
 		$("#hiddenPrdId").val(paramItem.id);
 		$("#formProductName").val(paramItem.name);
 		$("#inputCode").val(paramItem.code);
+		$("#inputProductHsn").val(paramItem.hsn);
 		$("#inputProductDesc").val(paramItem.desc);
 		$("#inputProductMeasurement").val(paramItem.messurement);
 		$("#inputProductType").val(paramItem.type);

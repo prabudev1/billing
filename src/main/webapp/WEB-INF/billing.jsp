@@ -58,19 +58,28 @@
 										</tbody>
 										<tfoot>
 											<tr>
-												<td colspan="3" class="tbl-bills-hide">Total</td>
+												<td rowspan="5" colspan="2" class="tbl-bills-date" valign="bottom">
+													<div class="">
+														<label for="billingDate">Billing Date</label> 
+														<input type="text"class="form-control col-6" id="billingDate">
+														<input type="hidden" id="hiddenBillingDate" name="hiddenBillingDate">
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td class="tbl-bills-hide">Total</td>
 												<td class="tbl-bills-hide"><span id="spanTotalPrice">0.00</span></td>
 											</tr>
 											<tr>
-												<td colspan="3" class="tbl-bills-hide">CGST <span id="spanCGSTPercent"></span>%</td>
+												<td class="tbl-bills-hide">CGST <span id="spanCGSTPercent"></span>%</td>
 												<td class="tbl-bills-hide"><span id="spanCGST">0.00</span></td>
 											</tr>
 											<tr>
-												<td colspan="3" class="tbl-bills-hide">SGST <span id="spanSGSTPercent"></span>%</td>
+												<td class="tbl-bills-hide">SGST <span id="spanSGSTPercent"></span>%</td>
 												<td class="tbl-bills-hide"><span id="spanSGST">0.00</span></td>
 											</tr>
 											<tr>
-												<td colspan="3" class="tbl-bills-hide">Grand Total</td>
+												<td class="tbl-bills-hide">Grand Total</td>
 												<td class="tbl-bills-hide"><span id="spanGrandTotalPrice">0.00</span></td>
 											</tr>
 											<tr>

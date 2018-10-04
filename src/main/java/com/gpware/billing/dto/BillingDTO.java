@@ -5,6 +5,8 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class BillingDTO implements Serializable {
 	private static final long serialVersionUID = 2530083827640916387L;
 	private int id;
@@ -20,6 +22,8 @@ public class BillingDTO implements Serializable {
 	private BigDecimal total;
 	private String sts;
 	private String notes;
+	
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm z")
 	private Timestamp billingDate;
 	private String createdBy;
 	private Timestamp createdOn;

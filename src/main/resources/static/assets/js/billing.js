@@ -569,6 +569,8 @@ $(document).ready(function() {
 			var valGstCentralVal = $("#spanCGST").html()
 			var valTotal = $("#spanGrandTotalPrice").html();
 			
+			var valBillingDate = $("#hiddenBillingDate").val()
+			
 			var jsonBilling = {
 					customer: { id : valCustomerId},
 					totItems: valTotItems,
@@ -578,6 +580,7 @@ $(document).ready(function() {
 					gstStateVal: valGstStateVal,
 					gstCentralVal: valGstCentralVal,
 					total: valTotal,
+					billingDate: valBillingDate,
 					billingItems : [{}]
 			};
 			
@@ -660,6 +663,8 @@ $(document).ready(function() {
 		$("#spanSGST").html("0.00");
 		$("#spanGrandTotalPrice").html("0.00");
 		$("#hiddenTotalQty").val("0.00");
+		
+		$("#hiddenBillingDate").val(currentDate.format('YYYY-MM-DD HH:mm ZZ'));
 	}
 	
 	$("#btnClear").click(function(event) {
@@ -685,7 +690,7 @@ $(document).ready(function() {
 	}
 	
 	function printBilling(billingId, jsonBilling) {
-		var myWindow = window.open('/print?bid=' + billingId, '_blank', 'width=560,height=396');
+		var myWindow = window.open('/print?bid=' + billingId, '_blank', 'width=560,height=816');
 	    myWindow.focus();
 	    //myWindow.print();
 	    //myWindow.close();
@@ -694,4 +699,19 @@ $(document).ready(function() {
 	function scrollToTop() {
 		$('html,body').animate({ scrollTop: 0 }, 'slow');
 	}
+	
+	var currentDate = moment();
+	$('#billingDate').daterangepicker({
+		singleDatePicker: true,
+		timePicker: true,
+    	showDropdowns: true,
+    	minYear: 2018,
+    	startDate: currentDate,
+    	maxYear: parseInt(moment().format('YYYY'), 10),
+    	locale: {format: 'DD-MMM-YYYY hh:mm A'}
+	}, function(start, end, label) {
+		$("#hiddenBillingDate").val(start.format('YYYY-MM-DD HH:mm ZZ'));
+	});
+	
+	$("#hiddenBillingDate").val(currentDate.format('YYYY-MM-DD HH:mm ZZ'));
 });
